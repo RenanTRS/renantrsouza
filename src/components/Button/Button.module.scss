@@ -1,0 +1,19 @@
+@import "../../styles/_variables";
+
+.button {
+  background-color: $green-700;
+
+  color: $gray-200;
+  font-weight: bold;
+
+  padding: 8px;
+  border-radius: 8px;
+  border: .4px solid var(--border-button);
+
+  cursor: pointer;
+  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+
+  &:hover {
+    background-color: $green-500;
+  }
+}
