@@ -14,9 +14,23 @@ body {
   background-color: transparent;
   color: $white;
   
+  background-image: url("../assets/backgrounds/mobile.svg");
+  @media (min-width: 427px) {
+    background-image: url("../assets/backgrounds/tablet.svg");
+  }
+  @media (min-width: 1022px){
+    background-image: url("../assets/backgrounds/background.svg");
+  }
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
