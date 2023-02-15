@@ -1,5 +1,3 @@
-import { Blobs } from "../src/components/Blobs";
-
 export default function Home() {
   return (
     <>

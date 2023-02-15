@@ -1,3 +1,5 @@
+@use "./mixins" as b;
+@import "./mixins";
 @import "./variables";
 
 body {
@@ -15,12 +17,15 @@ body {
   color: $white;
   
   background-image: url("../assets/backgrounds/mobile.svg");
-  @media (min-width: 427px) {
+
+  @include raw-breakpoins(427px){
     background-image: url("../assets/backgrounds/tablet.svg");
   }
-  @media (min-width: 1022px){
+  
+  @include raw-breakpoins(1024px){
     background-image: url("../assets/backgrounds/desktop.svg");
   }
+  
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
