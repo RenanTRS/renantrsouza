@@ -1,0 +1,25 @@
+$breakpoins: (
+  "mobile-sm": 320px,
+  "mobile-m": 430px,
+  "tablet": 1024px,
+  "desktop": 1200px
+);
+
+@mixin breakpoints($size){
+  @if $size == mobile-sm{
+    @media (max-width: map-get($breakpoins, $size)){
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($breakpoins, $size)){
+      @content;
+    }
+  }
+
+}
+
+@mixin raw-breakpoins($value) {
+  @media (min-width: $value){
+    @content;
+  }
+}
