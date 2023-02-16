@@ -1,0 +1,106 @@
+@use "../../styles/mixins" as b;
+@import "../../styles/global";
+@import "../../styles/variables";
+
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 3.5rem; //56px
+  padding: 1.25rem .5rem; // 20px 8px
+
+  border-bottom: 1px solid $zinc-700;
+  
+  @extend .flex;
+  justify-content: space-between;
+  
+  background-color: $zinc-900;
+  
+  z-index: 10;
+  
+  font-weight: bold;
+
+  &__mobile_container {
+    background-color: $zinc-900;
+    width: 100vw;
+    height: 3.438rem; //55px
+    padding: 1.25rem .5rem; // 20px 8px
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @extend .flex;
+    justify-content: space-between;
+
+    @include b.breakpoints(desktop){
+      position: relative;
+      width: auto;
+    }
+  }
+  
+  &__img {
+    width: 128px;
+  }
+
+  &__toggle {
+    background-color: transparent;
+    border: none;
+    color: $gray-200;
+
+    @include b.breakpoints(desktop){
+      display: none;
+    }
+  }
+  &__nav_active {
+    top: 0 !important;
+  }
+  &__nav {
+    background-color: $zinc-900;
+
+    border-bottom: 1px solid $zinc-700;
+    
+    position: absolute;
+    top: -12.5rem; //-200px
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+    transition: .5s;
+
+    ul {
+      @extend .flex;
+      flex-direction: column;
+      gap: .25rem; //4px
+
+      padding: 4rem 4.375rem 2rem; //64px 70px, 32px
+    }
+
+    a {
+      color: $gray-400;
+      text-decoration: none;
+      font-size: 1rem; //16px
+
+      transition: .5s;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    @include b.breakpoints(desktop){
+      position: relative;
+      top: 0;
+      width: auto;
+      
+      border: none;
+
+      transition: none;
+      
+      ul {
+        flex-direction: row;
+        padding: 0;
+        gap: 1.625rem; //26px
+      }
+    }
+  }
+}
