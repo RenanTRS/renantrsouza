@@ -19,6 +19,10 @@
   
   font-weight: bold;
 
+  @include b.breakpoints(desktop){
+    height: 6.25rem; //100px
+  }
+
   &__mobile_container {
     @extend .background-color;
 
@@ -41,6 +45,10 @@
   
   &__img {
     width: 128px;
+
+    @include b.breakpoints(desktop){
+      width: 21.145rem; //338.32px
+    }
   }
 
   &__toggle {
@@ -53,61 +61,65 @@
       display: none;
     }
   }
+}
 
-  &__nav_active {
-    top: 0 !important;
+.nav {
+  @extend .background-color;
+
+  border-bottom: 1px solid $zinc-700;
+  
+  position: absolute;
+  top: -12.5rem; //-200px
+  left: 0;
+  z-index: -1;
+  
+  width: 100%;
+
+  transition: .5s;
+
+  ul {
+    @extend .flex;
+    flex-direction: column;
+    gap: .25rem; //4px
+
+    padding: 4rem 4.375rem 2rem; //64px 70px, 32px
   }
-  &__nav {
-    @extend .background-color;
 
-    border-bottom: 1px solid $zinc-700;
-    
-    position: absolute;
-    top: -12.5rem; //-200px
-    left: 0;
-    z-index: -1;
-    
-    width: 100%;
+  a {
+    color: $gray-400;
+    text-decoration: none;
+    font-size: 1rem; //16px
 
-    transition: .5s;
+    transition: colors .5s;
+
+    &:hover {
+      color: $white;
+    }
+
+    @include b.breakpoints(desktop) {
+      font-size: 1.5rem; //24px
+    }
+  }
+
+  @include b.breakpoints(desktop){
+    position: relative;
+    top: 0;
+    
+    //height: 6.25rem; //100px
+    width: auto;
+    
+    border: none;
+
+    transition: none;
 
     ul {
-      @extend .flex;
-      flex-direction: column;
-      gap: .25rem; //4px
-
-      padding: 4rem 4.375rem 2rem; //64px 70px, 32px
+      flex-direction: row;
+      padding: 0;
+      gap: 1.625rem; //26px
     }
+  }
 
-    a {
-      color: $gray-400;
-      text-decoration: none;
-      font-size: 1rem; //16px
-
-      transition: .5s;
-
-      &:hover {
-        color: $white;
-      }
-    }
-
-    @include b.breakpoints(desktop){
-      position: relative;
-      top: 0;
-      
-      width: auto;
-      
-      border: none;
-
-      transition: none;
-
-      ul {
-        flex-direction: row;
-        padding: 0;
-        gap: 1.625rem; //26px
-      }
-    }
-
-    
+  &__active {
+    top: 0 !important;
   }
 }
