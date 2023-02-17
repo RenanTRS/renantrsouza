@@ -31,11 +31,7 @@ export function Header() {
         </button>
       </div>
 
-      <nav
-        className={`${style.header__nav} ${
-          isMenuActive && style.header__nav_active
-        }`}
-      >
+      <nav className={`${style.nav} ${isMenuActive ? style.nav__active : ""}`}>
         <ul>
           <li>
             <a href="#">Home</a>

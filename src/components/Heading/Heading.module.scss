@@ -1,0 +1,29 @@
+@use "../../styles/mixins" as b;
+
+.heading {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.size {
+  &__lg {
+    font-size: 2rem; //32px
+
+    @include b.breakpoints(desktop) {
+      font-size: 3.5rem; //56px
+    }
+  }
+  &__md {
+    font-size: 1.5rem; //24px
+
+    @include b.breakpoints(desktop){
+      font-size: 2rem; //32px
+    }
+  }
+  &__sm {
+    font-size: 1rem; //16px
+
+    @include b.breakpoints(desktop){
+      font-size: 1.5rem; //24px
+    }
+  }
+}

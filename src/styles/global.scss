@@ -14,7 +14,12 @@
 
 .section {
   display: block;
-  padding-top: 3.5rem;
+  
+  flex: 1;
+  /* padding-top: 3.5rem;
+  @include b.breakpoints(desktop) {
+    padding-top: 6.5rem;
+  } */
 }
 
 .background-color {
@@ -42,11 +47,11 @@
   
   overflow-y: scroll;
   overflow-x: hidden;
+
+  @extend .flex;
 }
 
 .flex {
   display: flex;
   align-items: center;
 }
-
-//font-family: 'Bebas Neue', cursive;
