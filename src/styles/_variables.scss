@@ -14,25 +14,28 @@ $orange-500: #f97316;
 
 $indigo-800: #3730a3;
 
+$primary-color: $zinc-900;
+$secondary-color: $zinc-800;
+
 $orange-indigo-gradient: linear-gradient(180deg, $orange-500 0%, $indigo-800 100%);
 $green-indigo-gradient: linear-gradient(180deg, $green-500 0%, $indigo-800 100%);
   
 $hover-card: $orange-500;
-  $border-button: $zinc-700;
-  
-  $sm-m-content: 240px;
-  $lg-m-content: 328px;
-  $t-content: 760px;
+$border-button: $zinc-700;
 
-  $text-lg-d: 18px;
-  $text-md-d: 16px;
-  $text-sm-d: 14px;
-  $text-lg-m: 16px;
-  $text-md-m: 14px;
+$sm-m-content: 240px;
+$lg-m-content: 328px;
+$t-content: 760px;
 
-  $heading-lg-d: 56px;
-  $heading-md-d: 32px;
-  $heading-sm-d: 24px;
-  $heading-lg-m: 32px;
-  $heading-md-m: 24px;
-  $heading-sm-m: 16px;
+$text-lg-d: 18px;
+$text-md-d: 16px;
+$text-sm-d: 14px;
+$text-lg-m: 16px;
+$text-md-m: 14px;
+
+$heading-lg-d: 56px;
+$heading-md-d: 32px;
+$heading-sm-d: 24px;
+$heading-lg-m: 32px;
+$heading-md-m: 24px;
+$heading-sm-m: 16px;
