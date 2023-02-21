@@ -1,10 +1,17 @@
 import { Header } from "../src/components/Header";
-import { Heading } from "../src/components/Heading";
 import { Main } from "../src/screens/Main";
+
+import { Roboto, Bebas_Neue } from "@next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap"
+});
 
 export default function Home() {
   return (
-    <div className="body">
+    <div className={`${roboto.className} body`}>
       <main className="main">
         <Header />
 
