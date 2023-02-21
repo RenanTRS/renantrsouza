@@ -42,14 +42,6 @@
       width: auto;
     }
   }
-  
-  &__img {
-    width: 128px;
-
-    @include b.breakpoints(desktop){
-      width: 21.145rem; //338.32px
-    }
-  }
 
   &__toggle {
     background-color: transparent;

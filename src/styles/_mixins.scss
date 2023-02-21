@@ -2,7 +2,8 @@ $breakpoins: (
   "mobile-sm": 320px,
   "mobile-m": 430px,
   "tablet": 1024px,
-  "desktop": 1200px
+  "desktop": 1200px,
+  "desktop-lg": 1440px
 );
 
 @mixin breakpoints($size){
