@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { List, XSquare } from "phosphor-react";
 import { useState } from "react";
-import logoImg from "../../assets/logo.svg";
+import { Logo } from "../Logo";
 import style from "./Header.module.scss";
 
 export function Header() {
@@ -14,13 +13,7 @@ export function Header() {
   return (
     <header className={style.header}>
       <div className={style.header__mobile_container}>
-        <Image
-          src={logoImg}
-          alt="Logo do site, com o nome <RenanTRS />"
-          priority
-          quality={100}
-          className={style.header__img}
-        />
+        <Logo size="header" />
 
         <button className={style.header__toggle} onClick={handleShowMobileMenu}>
           {!isMenuActive ? (
