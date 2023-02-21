@@ -20,6 +20,10 @@
   font-weight: bold;
 
   @include b.breakpoints(desktop){
+    height: 5rem; //80px
+  }
+
+  @include b.breakpoints(desktop-lg){
     height: 6.25rem; //100px
   }
 
@@ -89,6 +93,10 @@
     }
 
     @include b.breakpoints(desktop) {
+      font-size: 1.125rem; //18px
+    }
+
+    @include b.breakpoints(desktop-lg) {
       font-size: 1.5rem; //24px
     }
   }
