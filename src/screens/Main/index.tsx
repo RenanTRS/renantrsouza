@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Heading } from "../../components/Heading";
 import { tecnologies } from "../../utils/tecnologies";
 
 export function Main() {
