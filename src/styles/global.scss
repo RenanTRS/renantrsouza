@@ -43,6 +43,8 @@
   background-color: transparent;
   color: $white;
   background-image: url("../assets/backgrounds/mobile.svg");
+  
+  padding-top: 3.5rem; //56px
 
   @include raw-breakpoins(427px){
     background-image: url("../assets/backgrounds/tablet.svg");
@@ -51,7 +53,12 @@
   @include raw-breakpoins(1024px){
     background-image: url("../assets/backgrounds/desktop.svg");
   }
-  
+  @include b.breakpoints(desktop){
+    padding-top: 5rem; //80px
+  }
+  @include b.breakpoints(desktop){
+    padding-top: 6.25rem; //100px
+  }
   background-repeat: no-repeat;
   background-position: center;
   
@@ -60,6 +67,7 @@
   
   overflow-y: scroll;
   overflow-x: hidden;
+
 
   @extend .flex;
 }
