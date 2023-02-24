@@ -9,6 +9,7 @@ interface HeadingProps {
   asChild?: boolean;
   children: ReactNode;
   className?: string;
+  sub?: boolean;
 }
 
 const bebasNeue = Bebas_Neue({
@@ -21,18 +22,25 @@ export function Heading({
   size = "lg",
   asChild,
   children,
-  className
+  className,
+  sub = false
 }: HeadingProps) {
   const Component = asChild ? Slot : "h1";
   return (
-    <Component
-      className={clsx([`${bebasNeue.className}`, className], {
-        [style.size__lg]: size === "lg",
-        [style.size__md]: size === "md",
-        [style.size__sm]: size === "sm"
-      })}
-    >
-      {children}
-    </Component>
+    <div className={style.heading}>
+      {sub && <span className={style.heading__sub} />}
+
+      <Component
+        className={clsx([`${bebasNeue.className}`, className], {
+          [style.size__lg]: size === "lg",
+          [style.size__md]: size === "md",
+          [style.size__sm]: size === "sm"
+        })}
+      >
+        {children}
+      </Component>
+
+      {sub && <span className={style.heading__sub} />}
+    </div>
   );
 }

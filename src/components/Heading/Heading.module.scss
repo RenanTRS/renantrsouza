@@ -1,7 +1,19 @@
 @use "../../styles/mixins" as b;
+@import "../../styles/variables";
+@import "../../styles/global.scss";
 
 .heading {
-  /* font-family: 'Bebas Neue', cursive; */
+  @extend .flex;
+  gap: 1.5rem; //24px;
+  width: 15rem; //240px;
+
+  &__sub {
+    display: block;
+    height: 1px;
+    width: 1.25rem; //20px;
+    background-color: $white;
+
+  }
 }
 
 .size {
