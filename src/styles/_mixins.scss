@@ -19,8 +19,14 @@ $breakpoins: (
 
 }
 
-@mixin raw-breakpoins($value) {
-  @media (min-width: $value){
-    @content;
+@mixin raw-breakpoins($value, $horizontal: false) {
+  @if $horizontal == false {
+    @media (min-width: $value){
+      @content;
+    }
+  } @else {
+    @media (max-height: $value){
+      @content;
+    }
   }
 }
