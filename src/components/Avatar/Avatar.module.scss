@@ -1,21 +1,25 @@
 @import "../../styles/global.scss";
+@import "../../styles/mixins.scss";
 
 .avatar {
   position: relative;
-  z-index: 1;
+
+  @extend .flex;
+  justify-content: center;
+
+  background-image: url("../../assets/blob.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 
   &__image {
     width: 15rem; //240px;
     height: 15rem; //240px;
     
     border-radius: 50%;
+
+    @include raw-breakpoins(600px, true){
+      width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
+      height: clamp(6.25rem, 25vh, 15rem); //100px 25vh 240px
+    }
   }
-}
-
-.blob {
-  @extend .absolute_zero;
-
-  transform: scale(1.5);
-
-  z-index: -1;
 }
