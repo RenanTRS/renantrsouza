@@ -1,0 +1,17 @@
+.image {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+
+  height: 152px;
+  width: 100%;
+  
+  &__container {
+    place-self: center;
+  }
+  
+  &__logo {
+    height: 40px;
+    width: 40px;
+  }
+}
