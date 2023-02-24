@@ -1,0 +1,21 @@
+@import "../../styles/global.scss";
+
+.avatar {
+  position: relative;
+  z-index: 1;
+
+  &__image {
+    width: 15rem; //240px;
+    height: 15rem; //240px;
+    
+    border-radius: 50%;
+  }
+}
+
+.blob {
+  @extend .absolute_zero;
+
+  transform: scale(1.5);
+
+  z-index: -1;
+}
