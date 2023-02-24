@@ -1,0 +1,15 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixins";
+
+.home {
+  @extend .flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem; //24px;
+
+  width: 100%;
+
+  @include raw-breakpoins(500px, true){
+    gap: clamp(.5rem, 3vh, 1.5rem);
+  }
+}
