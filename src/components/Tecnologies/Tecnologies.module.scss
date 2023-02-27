@@ -40,4 +40,8 @@
 
     margin-top: .1rem; //1.6px
   }
+
+  @include b.breakpoints(desktop) {
+    margin-top: 1.5rem;
+  }
 }
