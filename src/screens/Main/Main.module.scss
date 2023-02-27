@@ -5,28 +5,33 @@
 .home {
   @extend .flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1.5rem; //24px;
+  justify-content: center;
 
   width: 100%;
+  min-height: 100vh;
   
   @include raw-breakpoins(500px, true){
     gap: clamp(.5rem, 3vh, 1.5rem);
+    justify-content: start;
   }
 
   @include b.breakpoints(tablet-sm) {
     gap: 8.5rem; //136px
+    justify-content: center;
+  }
+
+  @include raw-landscape(560px, false) {
+    gap: clamp(.5rem, 7vh, 1.5rem);
+    justify-content: start;
   }
   
-  @include raw-landscape(1024px) {
+  @include raw-landscape(1024px, false) {
+    justify-content: center;
     gap: clamp(.5rem, 3vh, 1.5rem);
   }
 
-  @include raw-landscape(560px) {
-    gap: clamp(.5rem, 7vh, 1.5rem);
-  }
-
   @include b.breakpoints(desktop){
-    gap: 3rem; //48px
+    gap: 2rem; //48px
   }
 }

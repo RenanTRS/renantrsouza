@@ -1,7 +1,5 @@
-import { Heading } from "../../components/Heading";
 import style from "./Main.module.scss";
 
-import { Avatar } from "../../components/Avatar";
 import { Tecnologies } from "../../components/Tecnologies";
 import { ScrollDown } from "../../components/ScrollDown";
 import { Hero } from "../../components/Hero";
