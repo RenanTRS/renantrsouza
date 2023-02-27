@@ -4,11 +4,11 @@
 .scroll {
   opacity: .5;
 
-  width: 24px;
-  height: 24px;
+  width: 1.5rem; //24px;
+  height: 1.5rem; //24px;
 
   @include b.breakpoints(tablet-sm) {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem; //36px;
+    height: 2.25rem; //36px;
   }
 }
