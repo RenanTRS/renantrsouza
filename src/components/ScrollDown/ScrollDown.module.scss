@@ -5,6 +5,7 @@
 
   &__mobile {
     display: block;
+    opacity: .5;
     
     @include raw-breakpoins(650px, true){
       width: clamp(0.75rem, 100%, 1.401rem); //12px 100% 22.41px
@@ -19,6 +20,7 @@
     display: none;
     @include b.breakpoints(desktop) {
       display: block;
+      opacity: .5;
     }
   }
 }
