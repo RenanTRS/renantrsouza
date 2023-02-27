@@ -1,0 +1,19 @@
+@use "../../styles/mixins" as b;
+@import "../../styles/mixins";
+@import "../../styles/global.scss";
+
+.hero {
+  @extend.flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem; //24px;
+
+  width: 100%;
+    
+  @include b.breakpoints(tablet-sm) {
+    flex-direction: row-reverse;
+  }
+  @include raw-landscape(845px) {
+    flex-direction: row-reverse;
+  }
+}
