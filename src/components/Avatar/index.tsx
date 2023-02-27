@@ -10,6 +10,7 @@ export function Avatar() {
         src={avatarImg}
         alt="Uma foto artística do desenvolvedor."
         className={style.avatar__image}
+        priority
       />
     </div>
   );
