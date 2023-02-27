@@ -1,6 +1,7 @@
 $breakpoins: (
   "mobile-sm": 320px,
   "mobile-m": 430px,
+  "tablet-sm": 768px,
   "tablet": 1024px,
   "desktop": 1200px,
   "desktop-lg": 1440px
@@ -27,6 +28,18 @@ $breakpoins: (
   } @else {
     @media (max-height: $value){
       @content;
+    }
+  }
+}
+
+@mixin raw-landscape($value, $max: true) {
+  @if $max == true {
+    @media (orientation: landscape) and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @media (orientation: landscape) and (min-width: $value) {
+      @content
     }
   }
 }
