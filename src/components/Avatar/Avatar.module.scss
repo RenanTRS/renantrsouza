@@ -28,7 +28,11 @@
       height: 20rem; //320px
     }
 
-    @include raw-landscape(845px){
+    @include raw-landscape(843px){
+      width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
+      height: clamp(6.25rem, 53vh, 15rem); //100px 53vh 240px
+    }
+    @include raw-landscape(844px, false){
       width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
       height: clamp(6.25rem, 53vh, 15rem); //100px 53vh 240px
     }
