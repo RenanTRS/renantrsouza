@@ -2,6 +2,7 @@ import { Header } from "../src/components/Header";
 import { Main } from "../src/screens/Main";
 
 import { Roboto } from "@next/font/google";
+import { About } from "../src/screens/About";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -17,6 +18,7 @@ export default function Home() {
 
         <div className="container">
           <Main />
+          <About />
         </div>
       </main>
     </div>
