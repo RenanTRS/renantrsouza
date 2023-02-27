@@ -1,3 +1,6 @@
+@use "../../styles/mixins" as b;
+@import "../../styles/mixins";
+
 .image {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -13,5 +16,28 @@
   &__logo {
     height: 40px;
     width: 40px;
+  }
+
+  @include b.breakpoints(tablet-sm){
+    display: flex;
+      gap: 1rem; //16px
+
+    height: auto;
+
+    margin-top: 1.5rem; //24px
+  }
+
+  @include raw-landscape(845px) {
+    display: none;
+  }
+  
+  @include raw-landscape(560px, false){
+    display: flex;
+      gap: .2rem;
+      justify-content: center;
+
+    height: auto;
+
+    margin-top: .1rem; //1.6px
   }
 }
