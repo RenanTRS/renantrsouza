@@ -1,26 +1,14 @@
 @use "../../styles/mixins" as b;
 @import "../../styles/mixins";
-.span {
-  display: block;
 
-  &__mobile {
-    display: block;
-    opacity: .5;
-    
-    @include raw-breakpoins(650px, true){
-      width: clamp(0.75rem, 100%, 1.401rem); //12px 100% 22.41px
-      height: clamp(2.438rem, 100%, 3.063rem); //39px 25vh 49px
-    }
-    @include b.breakpoints(desktop) {
-      display: none;
-    }
-  }
+.scroll {
+  opacity: .5;
 
-  &__desktop {
-    display: none;
-    @include b.breakpoints(desktop) {
-      display: block;
-      opacity: .5;
-    }
+  width: 24px;
+  height: 24px;
+
+  @include b.breakpoints(tablet-sm) {
+    width: 36px;
+    height: 36px;
   }
 }
