@@ -1,37 +1,28 @@
-@use "../../styles/mixins" as b;
-@import "../../styles/global.scss";
-@import "../../styles/mixins";
+@use "../../styles/breakpoints" as break;
+@forward "../../styles/util";
 
 .home {
-  @extend .flex;
-  flex-direction: column;
-  gap: 1.5rem; //24px;
-  justify-content: center;
+  
+  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: calc(100vh - 6.5rem) 1.5rem;
+    justify-items: center;
+    align-items: center;
+    gap: clamp(.1rem, 3vh, 1.5rem);
 
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   
-  @include raw-breakpoins(500px, true){
-    gap: clamp(.5rem, 3vh, 1.5rem);
-    justify-content: start;
-  }
-
-  @include b.breakpoints(tablet-sm) {
-    gap: 8.5rem; //136px
-    justify-content: center;
-  }
-
-  @include raw-landscape(560px, false) {
-    gap: clamp(.5rem, 7vh, 1.5rem);
-    justify-content: start;
-  }
+  @extend .section;
   
-  @include raw-landscape(1024px, false) {
-    justify-content: center;
-    gap: clamp(.5rem, 3vh, 1.5rem);
+  @include break.landscape(){
+    grid-template-rows: calc(100vh - 3.5rem);
+  }
+  @include break.breakpoint(tablet) {
+    grid-template-rows: calc(100vh - 7.25rem) 2.25rem;
   }
 
-  @include b.breakpoints(desktop){
+  @include break.breakpoint(desktop) {
     gap: 2rem; //48px
   }
 }

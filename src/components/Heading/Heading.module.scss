@@ -1,23 +1,14 @@
 @use "../../styles/mixins" as b;
-@import "../../styles/mixins";
+@use "../../styles/breakpoints" as break;
+//@import "../../styles/mixins";
+@forward "../../styles/util";
 @import "../../styles/variables";
-@import "../../styles/global.scss";
+//@import "../../styles/global.scss";
 
 .heading {
   @extend .flex;
-  gap: 1.5rem; //24px;
-  width: 15rem; //240px;
-  justify-content: center;
-
-  @include raw-landscape(1024px){
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  @include breakpoints(tablet-sm) {
-    width: 100%;
-    justify-content: flex-start;
-  }
+    gap: 1.5rem; //24px;
+    justify-content: center;
 
   &__sub {
     display: block;
@@ -32,24 +23,21 @@
   &__lg {
     font-size: 2rem; //32px
 
-    @include b.breakpoints(tablet-sm) {
+    @include break.breakpoint(tablet) {
       font-size: 3.5rem; //56px
-    }
-    @include raw-landscape(845px) {
-      font-size: 2.5rem; //40px
     }
   }
   &__md {
     font-size: 1.5rem; //24px
 
-    @include b.breakpoints(tablet-sm){
+    @include break.breakpoint(tablet) {
       font-size: 2rem; //32px
     }
   }
   &__sm {
     font-size: 1rem; //16px
 
-    @include b.breakpoints(tablet-sm){
+    @include break.breakpoint(tablet) {
       font-size: 1.5rem; //24px
     }
   }

@@ -1,4 +1,4 @@
-@use "../../styles/mixins" as b;
+@use "../../styles/breakpoints" as break;
 @import "../../styles/global";
 @import "../../styles/variables";
 
@@ -19,12 +19,11 @@
   
   font-weight: bold;
 
-  @include b.breakpoints(desktop){
-    height: 5rem; //80px
+  @include break.breakpoint(desktop){
+    height: 5rem;
   }
-
-  @include b.breakpoints(desktop-lg){
-    height: 6.25rem; //100px
+  @include break.breakpoint(desktop-lg){
+    height: 6.25rem;
   }
 
   &__mobile_container {
@@ -41,7 +40,7 @@
     @extend .flex;
     justify-content: space-between;
 
-    @include b.breakpoints(desktop){
+    @include break.breakpoint(desktop){
       position: relative;
       width: auto;
     }
@@ -53,7 +52,7 @@
 
     border: none;
 
-    @include b.breakpoints(desktop){
+    @include break.breakpoint(desktop) {
       display: none;
     }
   }
@@ -92,20 +91,18 @@
       color: $white;
     }
 
-    @include b.breakpoints(desktop) {
+    @include break.breakpoint(desktop) {
       font-size: 1.125rem; //18px
     }
-
-    @include b.breakpoints(desktop-lg) {
+    @include break.breakpoint(desktop-lg) {
       font-size: 1.5rem; //24px
     }
   }
 
-  @include b.breakpoints(desktop){
+  @include break.breakpoint(desktop) {
     position: relative;
-    top: 0;
+      top: 0;
     
-    //height: 6.25rem; //100px
     width: auto;
     
     border: none;
