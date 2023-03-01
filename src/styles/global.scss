@@ -1,10 +1,8 @@
-@use "./mixins" as b;
-@import "./mixins";
+@use "./breakpoints" as break;
+@forward "./util";
 @import "./variables";
 
 .body {
-  /* font-family: 'Roboto', sans-serif; */
-
   background-color: $zinc-900;
 }
 
@@ -13,25 +11,15 @@
   width: 100%;
 }
 
-.section {
-  display: block;
-  
-  flex: 1;
-  /* padding-top: 3.5rem;
-  @include b.breakpoints(desktop) {
-    padding-top: 6.5rem;
-  } */
-}
-
 .logo {
   &__header {
     width: 8rem; // 128px
 
-    @include b.breakpoints(desktop){
-      width: 15rem; // 240px
+    @include break.breakpoint(desktop){
+      width: 15rem;
     }
-    @include b.breakpoints(desktop-lg){
-      width: 21.145rem; //338.32px
+    @include break.breakpoint(desktop-lg){
+      width: 21.145rem;
     }
   }
 }
@@ -45,29 +33,23 @@
   color: $white;
   background-image: url("../assets/backgrounds/mobile.svg");
   
-  //padding-top: 3.5rem; //56px
-  padding: 3.5rem 1.25rem 0; //56px 20px
+  padding: 0 1.25rem;
 
   @extend .flex;
     flex-direction: column;
 
-  @include raw-breakpoins(650px, true){
+  @include break.breakpoint(mobile) {
     display: block;
   }
-  @include raw-breakpoins(427px){
+  @include break.raw-breakpoint(26.6875em){//427px
     background-image: url("../assets/backgrounds/tablet.svg");
   }
   
-  @include raw-breakpoins(1024px){
+  @include break.breakpoint(tablet-lg) {
     background-image: url("../assets/backgrounds/desktop.svg");
   }
-  @include b.breakpoints(desktop){
-    //padding-top: 5rem; //80px
-    padding: 5rem auto; //80px
-  }
-  @include b.breakpoints(desktop){
-    //padding-top: 6.25rem; //100px
-    padding: 6.25rem auto; //100px
+  @include break.breakpoint(desktop) {
+    padding: 0 auto;
   }
   background-repeat: no-repeat;
   background-position: center;
