@@ -1,0 +1,24 @@
+$breakpoints: (
+  'mobile': '40em', //640px
+  'tablet': '48em', //768px
+  'tablet-lg': '64em', //1024px
+  'desktop': '80em', //1280px
+  'desktop-lg': '96em' //1536px
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+@mixin raw-breakpoint($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin landscape($size: 47.9375em) {
+  @media (orientation: landscape) and (max-width: $size){
+    @content;
+  }
+}
