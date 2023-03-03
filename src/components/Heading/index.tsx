@@ -8,7 +8,7 @@ interface HeadingProps {
   size: "lg" | "md" | "sm";
   asChild?: boolean;
   children: ReactNode;
-  className?: string;
+  className?: any;
   sub?: boolean;
 }
 
@@ -26,21 +26,35 @@ export function Heading({
   sub = false
 }: HeadingProps) {
   const Component = asChild ? Slot : "h1";
+
+  if (sub) {
+    return (
+      <div className={`${style.heading} ${className}`}>
+        {sub && <span className={style.heading__sub} />}
+
+        <Component
+          className={clsx([`${bebasNeue.className}`], {
+            [style.size__lg]: size === "lg",
+            [style.size__md]: size === "md",
+            [style.size__sm]: size === "sm"
+          })}
+        >
+          {children}
+        </Component>
+
+        {sub && <span className={style.heading__sub} />}
+      </div>
+    );
+  }
   return (
-    <div className={style.heading}>
-      {sub && <span className={style.heading__sub} />}
-
-      <Component
-        className={clsx([`${bebasNeue.className}`, className], {
-          [style.size__lg]: size === "lg",
-          [style.size__md]: size === "md",
-          [style.size__sm]: size === "sm"
-        })}
-      >
-        {children}
-      </Component>
-
-      {sub && <span className={style.heading__sub} />}
-    </div>
+    <Component
+      className={clsx(`${style.heading} ${bebasNeue.className}`, {
+        [style.size__lg]: size === "lg",
+        [style.size__md]: size === "md",
+        [style.size__sm]: size === "sm"
+      })}
+    >
+      {children}
+    </Component>
   );
 }
