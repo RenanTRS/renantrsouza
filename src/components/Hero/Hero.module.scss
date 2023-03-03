@@ -1,19 +1,31 @@
-@use "../../styles/mixins" as b;
-@import "../../styles/mixins";
-@import "../../styles/global.scss";
+@use "../../styles/breakpoints" as break;
+@forward "../../styles/util";
 
 .hero {
-  @extend.flex;
+  @extend .flex;
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem; //24px;
 
   width: 100%;
     
-  @include b.breakpoints(tablet-sm) {
+  @include break.breakpoint(tablet) {
     flex-direction: row-reverse;
   }
-  @include raw-landscape(845px) {
+  @include break.landscape() {
     flex-direction: row-reverse;
+  }
+}
+
+.title {
+  @extend .flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include break.landscape(48em){
+    align-items: start;
+  }
+  @include break.breakpoint(tablet) {
+    align-items: start;
   }
 }
