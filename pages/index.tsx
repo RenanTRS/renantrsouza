@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Header } from "../src/components/Header";
 import { Main } from "../src/screens/Main";
 
@@ -12,15 +13,21 @@ const roboto = Roboto({
 
 export default function Home() {
   return (
-    <div className={`${roboto.className} body`}>
-      <main className="main">
-        <Header />
+    <>
+      <Head>
+        <title>Renan T. R. Souza</title>
+      </Head>
 
-        <div className="container">
-          <Main />
-          <About />
-        </div>
-      </main>
-    </div>
+      <div className={`${roboto.className} body`}>
+        <main className="main">
+          <Header />
+
+          <div className="container">
+            <Main />
+            <About />
+          </div>
+        </main>
+      </div>
+    </>
   );
 }
