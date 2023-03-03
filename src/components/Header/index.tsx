@@ -15,7 +15,11 @@ export function Header() {
       <div className={style.header__mobile_container}>
         <Logo size="header" />
 
-        <button className={style.header__toggle} onClick={handleShowMobileMenu}>
+        <button
+          className={style.header__toggle}
+          onClick={handleShowMobileMenu}
+          aria-label="Mostrar menu"
+        >
           {!isMenuActive ? (
             <List size={32} weight="bold" />
           ) : (
