@@ -1,5 +1,6 @@
-@use "../../styles/mixins" as b;
-@import "../../styles/mixins";
+//@use "../../styles/mixins" as b;
+@use "../../styles/breakpoints" as break;
+//@import "../../styles/mixins";
 
 .image {
   display: grid;
@@ -18,7 +19,7 @@
     width: 40px;
   }
 
-  @include b.breakpoints(tablet-sm){
+  @include break.breakpoint(tablet){
     display: flex;
       gap: 1rem; //16px
 
@@ -27,11 +28,11 @@
     margin-top: 1.5rem; //24px
   }
 
-  @include raw-landscape(845px) {
+  @include break.landscape(63.9375em){
     display: none;
   }
   
-  @include raw-landscape(560px, false){
+  /* @include raw-landscape(560px, false){
     display: flex;
       gap: .2rem;
       justify-content: center;
@@ -39,9 +40,12 @@
     height: auto;
 
     margin-top: .1rem; //1.6px
-  }
+  } */
 
-  @include b.breakpoints(desktop) {
-    margin-top: 1.5rem;
+  @include break.breakpoint(tablet-lg) {
+    display: none;
   }
+  /* @include b.breakpoints(desktop) {
+    margin-top: 1.5rem;
+  } */
 }
