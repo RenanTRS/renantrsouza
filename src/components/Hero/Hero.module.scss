@@ -17,6 +17,33 @@
   }
 }
 
+.avatar {
+  position: relative;
+
+  @extend .flex;
+  justify-content: center;
+
+  background-image: url("../../assets/blob.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  img {
+    width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
+    height: clamp(6.25rem, 25vh, 15rem); //100px 25vh 240px
+    
+    border-radius: 50%;
+
+    @include break.breakpoint(tablet) {
+      width: 20rem;
+      height: 20rem;
+    }
+    @include break.landscape(52.75em) {
+      width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
+      height: clamp(6.25rem, 53vh, 15rem); //100px 53vh 240px
+    }
+  }
+}
+
 .title {
   @extend .flex;
   flex-direction: column;
@@ -27,5 +54,20 @@
   }
   @include break.breakpoint(tablet) {
     align-items: start;
+  }
+}
+
+.links {
+  display: none;
+
+  @include break.breakpoint(desktop){
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: .5rem;
+
+    width: 100%;
+
+    margin-top: .25rem;
   }
 }
