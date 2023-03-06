@@ -37,6 +37,7 @@ describe("Hero component", () => {
     it("should be able to render anchor links", () => {
       render(<Hero />);
 
+      const download = screen.getByRole("link", { name: "Download CV" });
       const whatsappLink = screen.getByRole("link", {
         name: "Link para o WhatsApp"
       });
@@ -47,6 +48,10 @@ describe("Hero component", () => {
         name: "Link para o GitHub"
       });
 
+      expect(download).toHaveAttribute(
+        "href",
+        "/documents/renan_tiago_ribeiro_de_souza.pdf"
+      );
       expect(whatsappLink).toBeInTheDocument();
       expect(linkedinLink).toBeInTheDocument();
       expect(githubLink).toBeInTheDocument();
