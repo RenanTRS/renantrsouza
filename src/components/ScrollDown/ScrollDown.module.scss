@@ -8,6 +8,9 @@
   width: 1.5rem; //24px;
   height: 1.5rem; //24px;
 
+  display: block;
+  margin-inline: auto;
+
   @include break.breakpoint(tablet){
     width: 2.25rem; //36px;
     height: 2.25rem; //36px;
