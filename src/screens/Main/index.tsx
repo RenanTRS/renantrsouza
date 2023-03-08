@@ -10,10 +10,14 @@ export function Main() {
       <div>
         <Hero />
 
-        <Tecnologies />
-      </div>
+        <div className={style.icons}>
+          <Tecnologies />
+        </div>
 
-      <ScrollDown />
+        <span className={style.scroll}>
+          <ScrollDown />
+        </span>
+      </div>
     </section>
   );
 }

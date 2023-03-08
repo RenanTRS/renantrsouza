@@ -2,27 +2,56 @@
 @forward "../../styles/util";
 
 .home {
-  
-  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: calc(100vh - 6.5rem) 1.5rem;
-    justify-items: center;
-    align-items: center;
-    gap: clamp(.1rem, 3vh, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+
+  @extend .section;
 
   width: 100%;
-  height: 100vh;
-  
-  @extend .section;
-  
-  @include break.landscape(){
-    grid-template-rows: calc(100vh - 3.5rem);
+  min-height: 100vh;
+
+  @media (max-height: 567px) and (orientation: portrait) {
+    margin-top: 1rem;
   }
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+
+  height: 152px;
+  width: 100%;
+
   @include break.breakpoint(tablet) {
-    grid-template-rows: calc(100vh - 7.25rem) 2.25rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    height: auto;
+    margin-top: 1.5rem;
+  }
+  @include break.landscape(64em) {
+    display: none;
+  }
+  @include break.breakpoint(desktop) {
+    display: none;
   }
 
-  @include break.breakpoint(desktop) {
-    gap: 2rem; //48px
+  span {
+    place-self: center;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.scroll{
+  display: block;
+  margin-top: 2rem;
+
+  @include break.landscape(64em){
+    display: none;
   }
 }
