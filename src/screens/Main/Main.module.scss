@@ -12,8 +12,8 @@
   width: 100%;
   min-height: 100vh;
 
-  @media (max-height: 567px) and (orientation: portrait) {
-    margin-top: 1rem;
+  @media (max-height: 35.4375em) and (orientation: portrait) {
+    padding-top: 2rem;
   }
 }
 
