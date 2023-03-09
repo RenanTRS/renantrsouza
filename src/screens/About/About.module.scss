@@ -44,6 +44,10 @@
   margin-top: 18px;
   margin-inline: auto;
 
+  p strong {
+    font-weight: bold;
+  }
+  
   @include break.landscape(56.25em){
     p {
       overflow-y: scroll;
