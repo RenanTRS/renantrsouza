@@ -1,9 +1,7 @@
-@use "../../styles/mixins" as b;
+//@use "../../styles/mixins" as b;
 @use "../../styles/breakpoints" as break;
-//@import "../../styles/mixins";
+@use "../../styles/variables" as *;
 @forward "../../styles/util";
-@import "../../styles/variables";
-//@import "../../styles/global.scss";
 
 .heading {
   @extend .flex;
@@ -15,6 +13,11 @@
     height: 1px;
     width: 1.25rem; //20px;
     background-color: $white;
+
+    @include break.breakpoint(tablet) {
+      width: 2rem;
+      height: .125rem;
+    }
 
   }
 }
