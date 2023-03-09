@@ -20,10 +20,6 @@
   text-decoration: none;
 
   @extend .transition-colors;
-
-  &:focus-visible {
-    @extend .focus-visible;
-  }
   
   &:active {
     transition-property: background-color;
