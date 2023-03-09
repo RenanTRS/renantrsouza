@@ -1,5 +1,6 @@
 @use "../../styles/breakpoints" as break;
 @forward "../../styles/util";
+@use "../../styles/variables" as *;
 
 .hero {
   @extend .flex;
@@ -69,5 +70,14 @@
     width: 100%;
 
     margin-top: .25rem;
+
+    a {
+      &:focus-visible {
+        outline-style: solid;
+        outline-width: 2px;
+        outline-color: $green-500;
+        border-radius: .25rem;
+      }
+    }
   }
 }
