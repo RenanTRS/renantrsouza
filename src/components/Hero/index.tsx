@@ -16,6 +16,8 @@ export function Hero() {
         <Image
           src={avatarImg}
           alt="Uma foto artística do desenvolvedor."
+          width={0}
+          height={0}
           priority
         />
       </div>
@@ -34,7 +36,7 @@ export function Hero() {
             target="_blank"
             aria-label="Link para o WhatsApp"
           >
-            <WhatsAppLogo />
+            <WhatsAppLogo aria-disabled />
           </Link>
 
           <Link
@@ -42,7 +44,7 @@ export function Hero() {
             target="_blank"
             aria-label="Link para o LinkedIn"
           >
-            <LinkedInLogo />
+            <LinkedInLogo aria-disabled />
           </Link>
 
           <Link
@@ -50,7 +52,7 @@ export function Hero() {
             target="_blank"
             aria-label="Link para o GitHub"
           >
-            <GitLogo />
+            <GitLogo aria-disabled />
           </Link>
         </div>
       </div>
