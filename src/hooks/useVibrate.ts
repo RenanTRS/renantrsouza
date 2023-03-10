@@ -1,7 +1,7 @@
-interface Props {
-  pattern: number;
-}
-
 export function useVibrate(value: number) {
-  navigator.vibrate(value);
+  const canIVibrate = window.navigator.vibrate; //check if this can vibrate
+
+  if (canIVibrate!) {
+    navigator.vibrate(value);
+  }
 }
