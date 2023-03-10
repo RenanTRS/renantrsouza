@@ -22,8 +22,8 @@ $breakpoints: (
     @content;
   }
 }
-@mixin portrait(){
-  @media (max-height: 56.25em) and (orientation: portrait){
+@mixin portrait($size: 56.25em){
+  @media (max-height: $size) and (orientation: portrait){
     @content;
   }
 }
