@@ -1,0 +1,96 @@
+@use "../../styles/breakpoints" as break;
+@forward "../../styles/util";
+
+.about {
+  width: 100%;
+  min-height: 100%;
+
+  @extend .section;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+
+  @include break.portrait() {
+    display: block;
+    padding-top: 4rem;
+
+    &__scroll {
+      display: block;
+      margin-top: 2rem;
+    }
+  }
+  @include break.landscape(56.25em) {
+    display: block;
+    padding-top: 4.5rem;
+
+    &__scroll {
+      display: none;
+    }
+  }
+}
+.container {
+  
+  .heading {
+    margin-inline: auto;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1064px;
+  margin-top: 18px;
+  margin-inline: auto;
+
+  p strong {
+    font-weight: bold;
+  }
+  
+  @include break.landscape(56.25em){
+    p {
+      overflow-y: scroll;
+      height: 56vh;
+    }
+  }
+  @include break.portrait() {
+    p {
+      overflow-y: scroll;
+      height: 64vh;
+    }
+  }
+
+  @include break.breakpoint(tablet-lg) {
+    grid-template-columns: 360px 1fr;
+  }
+  @include break.breakpoint(desktop){
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+.icons {
+  display: none;
+
+  pointer-events: none;
+
+  @include break.breakpoint(tablet-lg){
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-auto-rows: 60px;
+    place-self: center;
+
+    span {
+      place-self: center;
+    }
+  }
+  @include break.breakpoint(desktop) {
+    gap: 1rem;
+  }
+}
+.icon {
+  @include break.breakpoint(desktop){
+    width: 60px;
+    height: 60px;
+  }
+}

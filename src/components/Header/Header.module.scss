@@ -1,9 +1,47 @@
-@use "../../styles/mixins" as b;
+@use "../../styles/breakpoints" as break;
+@forward "../../styles/util";
 @import "../../styles/global";
 @import "../../styles/variables";
 
+.mobile_header_container {
+  @extend .background-color;
+
+  @extend .flex;
+    justify-content: space-between;
+
+  width: 100vw;
+  height: 3.438rem; //55px
+  padding: 1.25rem .5rem; // 20px 8px
+
+  position: absolute;
+    top: 0;
+    left: 0;
+
+  @include break.breakpoint(desktop){
+    position: relative;
+    width: auto;
+  }
+
+  &__toggle_button {
+    background-color: transparent;
+    color: $gray-200;
+    
+    border: none;
+    
+    &:focus-visible {
+      @extend .focus-visible;
+    }
+    
+    @include break.breakpoint(desktop) {
+      display: none;
+    }
+  }
+}
+
 .header {
   position: fixed;
+    z-index: 10;
+  
   width: 100vw;
   height: 3.5rem; //56px
   padding: 1.25rem .5rem; // 20px 8px
@@ -11,51 +49,17 @@
   border-bottom: 1px solid $zinc-700;
   
   @extend .flex;
-  justify-content: space-between;
+    justify-content: space-between;
   
   @extend .background-color;
   
-  z-index: 10;
-  
   font-weight: bold;
 
-  @include b.breakpoints(desktop){
-    height: 5rem; //80px
+  @include break.breakpoint(desktop){
+    height: 5rem;
   }
-
-  @include b.breakpoints(desktop-lg){
-    height: 6.25rem; //100px
-  }
-
-  &__mobile_container {
-    @extend .background-color;
-
-    width: 100vw;
-    height: 3.438rem; //55px
-    padding: 1.25rem .5rem; // 20px 8px
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    @extend .flex;
-    justify-content: space-between;
-
-    @include b.breakpoints(desktop){
-      position: relative;
-      width: auto;
-    }
-  }
-
-  &__toggle {
-    background-color: transparent;
-    color: $gray-200;
-
-    border: none;
-
-    @include b.breakpoints(desktop){
-      display: none;
-    }
+  @include break.breakpoint(desktop-lg){
+    height: 6.25rem;
   }
 }
 
@@ -63,28 +67,64 @@
   @extend .background-color;
 
   border-bottom: 1px solid $zinc-700;
+
+  padding-right: .5rem;
+  padding-bottom: 1rem;
   
   position: absolute;
-  top: -12.5rem; //-200px
-  left: 0;
-  z-index: -1;
+    top: -15rem; //-200px
+    left: 0;
+    z-index: -1;
   
   width: 100%;
 
+  @extend .flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+
   transition: .5s;
 
-  ul {
-    @extend .flex;
-    flex-direction: column;
-    gap: .25rem; //4px
-
-    padding: 4rem 4.375rem 2rem; //64px 70px, 32px
+  @include break.breakpoint(desktop) {
+    position: relative;
+      top: 0;
+    
+    padding: 0;
+    width: auto;    
+    border: none;
+    transition: none;
   }
 
-  a {
+  &__list {
+    @extend .flex;
+      align-items: end;
+      flex-direction: column;
+      gap: .75rem; //12px
+
+    padding-top: 4rem;
+    padding-left: 4.375rem;
+
+    @include break.breakpoint(desktop) {
+      align-items: center;
+      flex-direction: row;
+      gap: 1.625rem; //26px
+      padding: 0;
+    }
+
+    li {
+      padding: .25rem 0;
+      @include break.breakpoint(desktop) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__link {
     color: $gray-400;
     text-decoration: none;
     font-size: 1rem; //16px
+
+    padding: .25rem;
 
     transition: colors .5s;
 
@@ -92,30 +132,29 @@
       color: $white;
     }
 
-    @include b.breakpoints(desktop) {
-      font-size: 1.125rem; //18px
+    &:focus-visible{
+      @extend .focus-visible;
     }
 
-    @include b.breakpoints(desktop-lg) {
+    @include break.breakpoint(desktop) {
+      font-size: 1.125rem; //18px
+    }
+    @include break.breakpoint(desktop-lg) {
       font-size: 1.5rem; //24px
     }
   }
 
-  @include b.breakpoints(desktop){
-    position: relative;
-    top: 0;
+  &__download {
+    margin-right: .25rem;
     
-    //height: 6.25rem; //100px
-    width: auto;
-    
-    border: none;
+    @include break.breakpoint(desktop) {
+      display: none;
+    }
 
-    transition: none;
-
-    ul {
-      flex-direction: row;
-      padding: 0;
-      gap: 1.625rem; //26px
+    a {
+      &:focus-visible {
+        @extend .focus-visible;
+      }
     }
   }
 

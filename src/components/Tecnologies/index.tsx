@@ -2,8 +2,11 @@ import Image from "next/image";
 import { tecnologies } from "../../utils/tecnologies";
 import style from "./Tecnologies.module.scss";
 
-export function Tecnologies() {
-  const tecnologyNames = [
+interface Props {
+  className?: any;
+}
+export function Tecnologies(props: Props) {
+  const iconNames = [
     "html",
     "css",
     "styled-components",
@@ -18,26 +21,23 @@ export function Tecnologies() {
     "figma"
   ];
 
-  const logos = tecnologies.filter((index) =>
-    tecnologyNames.includes(index.name)
-  );
+  const logos = tecnologies.filter((index) => iconNames.includes(index.name));
 
   return (
-    <div className={style.image}>
+    <>
       {logos.map((logo) => {
         return (
-          <span className={style.image__container} key={logo.name}>
-            <Image
-              src={logo.source}
-              alt={logo.alt}
-              className={style.image__logo}
-              width={0}
-              height={0}
-              priority
-            />
-          </span>
+          <Image
+            src={logo.source}
+            alt={logo.alt}
+            className={props.className}
+            width={40}
+            height={40}
+            priority
+            key={logo.name}
+          />
         );
       })}
-    </div>
+    </>
   );
 }

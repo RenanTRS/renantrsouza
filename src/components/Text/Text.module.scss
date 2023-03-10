@@ -1,0 +1,11 @@
+@use "../../styles/breakpoints" as break;
+
+.text {
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: justify;
+
+  @include break.breakpoint(tablet) {
+    font-size: 1.125rem;
+  }
+}

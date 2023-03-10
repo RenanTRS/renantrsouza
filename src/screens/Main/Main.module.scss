@@ -1,32 +1,57 @@
-@use "../../styles/mixins" as b;
-@import "../../styles/global.scss";
-@import "../../styles/mixins";
+@use "../../styles/breakpoints" as break;
+@forward "../../styles/util";
 
 .home {
-  @extend .flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem; //24px;
+  gap: 2rem;
+
+  @extend .section;
 
   width: 100%;
-  
-  @include raw-breakpoins(500px, true){
-    gap: clamp(.5rem, 3vh, 1.5rem);
+  min-height: 100vh;
+
+  @media (max-height: 35.4375em) and (orientation: portrait) {
+    padding-top: 2rem;
+  }
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+
+  height: 152px;
+  width: 100%;
+
+  @include break.breakpoint(tablet) {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    height: auto;
+    margin-top: 1.5rem;
+  }
+  @include break.landscape(64em) {
+    display: none;
+  }
+  @include break.breakpoint(desktop) {
+    display: none;
   }
 
-  @include b.breakpoints(tablet-sm) {
-    gap: 8.5rem; //136px
+  img {
+    place-self: center;
+    height: 40px;
+    width: 40px;
   }
-  
-  @include raw-landscape(1024px) {
-    gap: clamp(.5rem, 3vh, 1.5rem);
-  }
+}
 
-  @include raw-landscape(560px) {
-    gap: clamp(.5rem, 7vh, 1.5rem);
-  }
+.scroll{
+  display: block;
+  margin-top: 2rem;
 
-  @include b.breakpoints(desktop){
-    gap: 3rem; //48px
+  @include break.landscape(64em){
+    display: none;
   }
 }
