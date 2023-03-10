@@ -150,6 +150,12 @@
     @include break.breakpoint(desktop) {
       display: none;
     }
+
+    a {
+      &:focus-visible {
+        @extend .focus-visible;
+      }
+    }
   }
 
   &__active {
