@@ -18,7 +18,7 @@ export function Header() {
     <>
       <header className={style.header}>
         <div className={style.mobile_header_container}>
-          <Logo size="header" aria-label="Logo do site" />
+          <Logo size="header" aria-label="Logo do site." />
 
           <button
             className={style.mobile_header_container__toggle_button}
@@ -43,7 +43,7 @@ export function Header() {
           <ul className={style.nav__list} role="menubar">
             <li role="menuitem">
               <Link
-                href="#"
+                href="#home"
                 className={style.nav__link}
                 onClick={() => useVibrate(45)}
               >
@@ -52,7 +52,7 @@ export function Header() {
             </li>
             <li role="menuitem">
               <Link
-                href="#"
+                href="#about"
                 className={style.nav__link}
                 onClick={() => useVibrate(45)}
               >
