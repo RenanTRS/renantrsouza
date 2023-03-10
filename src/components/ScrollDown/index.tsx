@@ -4,7 +4,7 @@ import { CaretDoubleDown } from "phosphor-react";
 export function ScrollDown() {
   return (
     <>
-      <CaretDoubleDown className={style.scroll} />
+      <CaretDoubleDown className={style.scroll} aria-disabled />
     </>
   );
 }
