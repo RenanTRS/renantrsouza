@@ -27,16 +27,16 @@ export function Tecnologies(props: Props) {
     <>
       {logos.map((logo) => {
         return (
-          <span key={logo.name}>
-            <Image
-              src={logo.source}
-              alt={logo.alt}
-              className={props.className}
-              width={40}
-              height={40}
-              priority
-            />
-          </span>
+          <Image
+            src={logo.source}
+            alt={logo.alt}
+            className={props.className}
+            title={logo.name}
+            width={40}
+            height={40}
+            priority
+            key={logo.name}
+          />
         );
       })}
     </>
