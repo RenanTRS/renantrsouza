@@ -31,7 +31,6 @@ export function Tecnologies(props: Props) {
             src={logo.source}
             alt={logo.alt}
             className={props.className}
-            title={logo.name}
             width={40}
             height={40}
             priority

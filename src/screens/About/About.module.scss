@@ -72,6 +72,8 @@
 .icons {
   display: none;
 
+  pointer-events: none;
+
   @include break.breakpoint(tablet-lg){
     display: grid;
     grid-template-columns: repeat(4, 60px);
