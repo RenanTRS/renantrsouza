@@ -18,26 +18,30 @@ export function Header() {
     <>
       <header className={style.header}>
         <div className={style.mobile_header_container}>
-          <Logo size="header" />
+          <Logo size="header" aria-label="Logo do site" />
 
           <button
             className={style.mobile_header_container__toggle_button}
             onClick={handleShowMobileMenu}
-            aria-label="Mostrar menu"
+            aria-label={isMenuActive ? "Fechar menu" : "Abrir menu"}
+            aria-controls="menu"
+            aria-haspopup="true"
+            aria-expanded={!isMenuActive ? "false" : "true"}
           >
             {!isMenuActive ? (
-              <List size={32} weight="bold" />
+              <List size={32} weight="bold" aria-disabled />
             ) : (
-              <XSquare size={32} weight="bold" />
+              <XSquare size={32} weight="bold" aria-disabled />
             )}
           </button>
         </div>
 
         <nav
           className={`${style.nav} ${isMenuActive ? style.nav__active : ""}`}
+          id="menu"
         >
-          <ul className={style.nav__list}>
-            <li>
+          <ul className={style.nav__list} role="menubar">
+            <li role="menuitem">
               <Link
                 href="#"
                 className={style.nav__link}
@@ -46,7 +50,7 @@ export function Header() {
                 Home
               </Link>
             </li>
-            <li>
+            <li role="menuitem">
               <Link
                 href="#"
                 className={style.nav__link}
@@ -55,7 +59,7 @@ export function Header() {
                 Sobre mim
               </Link>
             </li>
-            <li>
+            <li role="menuitem">
               <Link
                 href="#"
                 className={style.nav__link}
@@ -64,7 +68,7 @@ export function Header() {
                 Meus projetos
               </Link>
             </li>
-            <li>
+            <li role="menuitem">
               <Link
                 href="#"
                 className={style.nav__link}
