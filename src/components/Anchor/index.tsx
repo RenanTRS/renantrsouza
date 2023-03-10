@@ -25,7 +25,7 @@ export function Anchor({ type, link, ...props }: Anchor) {
         onClick={() => useVibrate(60)}
       >
         <span className={style.anchor__icon}>
-          <DownloadSimple weight="bold" />
+          <DownloadSimple weight="bold" aria-disabled />
         </span>
         Download CV
       </a>
@@ -42,14 +42,14 @@ export function Anchor({ type, link, ...props }: Anchor) {
       {type === "linkToWeb" ? (
         <>
           <span className={style.anchor__icon}>
-            <GlobeHemisphereWest weight="bold" />
+            <GlobeHemisphereWest weight="bold" aria-disabled />
           </span>
           Acesse
         </>
       ) : (
         <>
           <span className={style.anchor__icon}>
-            <GithubLogo weight="bold" />
+            <GithubLogo weight="bold" aria-disabled />
           </span>
           Visite
         </>
