@@ -1,27 +1,30 @@
 @use "./variables" as *;
-
+@use "./breakpoints" as break;
 .swiper {
-  padding: 2rem !important;
   z-index: 0 !important;
+  
+  @include break.breakpoint(desktop){
+    padding: 2rem !important;
+  }
 }
 .swiper-slide {
   display: flex !important;
   justify-content: center !important;
 
+  //width: 232px !important;
   filter: brightness(.5);
 }
 .swiper-slide-active {
   filter: brightness(1) !important;
-  transition: 2s;
-
-  #cover-card {
-    transform: rotate(0);
-    transition: transform .2s;
-  }
+  transition: .2s;
 }
 /* .swiper-pagination-bullet-active {
   background-color: $orange-500 !important;
 } */
+
+.swiper-slide-shadow-left, .swiper-slide-shadow-right {
+  background: transparent !important;
+}
 .swiper-button-prev {
   color: $white !important;
 }
