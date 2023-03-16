@@ -48,7 +48,7 @@ export function Heading({
   }
   return (
     <Component
-      className={clsx(`${style.heading} ${bebasNeue.className}`, {
+      className={clsx(`${bebasNeue.className}`, {
         [style.size__lg]: size === "lg",
         [style.size__md]: size === "md",
         [style.size__sm]: size === "sm"
