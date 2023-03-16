@@ -10,7 +10,7 @@ export const tecnologies = [
     alt: "Logo do CSS, um escudo com o número 3 no centro."
   },
   {
-    name: "styled-components",
+    name: "styledComponents",
     source: "/tecnologies/styled-components.svg",
     alt: "Logo do Styled-Coponents, uma mão pintando a unha com esmalte."
   },
@@ -45,7 +45,7 @@ export const tecnologies = [
     alt: "Logo do Jest, uma bota de bobo da corte."
   },
   {
-    name: "testing-library",
+    name: "testingLibrary",
     source: "/tecnologies/testinglibrary.svg",
     alt: "Logo do Testing Library, um polvo."
   },
@@ -115,3 +115,31 @@ export const tecnologies = [
     alt: "Logo do Tailwind, duas ondas."
   }
 ];
+
+/*
+query Projects {
+  projects {
+    id
+    icon {
+      url
+    }
+    name
+    cover {
+      url
+    }
+    desktopImg {
+      url
+    }
+    mobileImg {
+      url
+    }
+    description
+    gif {
+      url
+    }
+    tecnologies
+    linkDeploy
+    linkGithub
+  }
+}
+*/
