@@ -61,7 +61,7 @@ export function Header() {
             </li>
             <li role="menuitem">
               <Link
-                href="#"
+                href="#projects"
                 className={style.nav__link}
                 onClick={() => useVibrate(45)}
               >
@@ -70,11 +70,11 @@ export function Header() {
             </li>
             <li role="menuitem">
               <Link
-                href="#"
+                href="#contact"
                 className={style.nav__link}
                 onClick={() => useVibrate(45)}
               >
-                Projetos de cursos
+                Contato
               </Link>
             </li>
           </ul>
