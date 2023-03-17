@@ -28,10 +28,6 @@
     
     border: none;
     
-    &:focus-visible {
-      @extend .focus-visible;
-    }
-    
     @include break.breakpoint(desktop) {
       display: none;
     }
@@ -132,10 +128,6 @@
       color: $white;
     }
 
-    &:focus-visible{
-      @extend .focus-visible;
-    }
-
     @include break.breakpoint(desktop) {
       font-size: 1.125rem; //18px
     }
@@ -149,12 +141,6 @@
     
     @include break.breakpoint(desktop) {
       display: none;
-    }
-
-    a {
-      &:focus-visible {
-        @extend .focus-visible;
-      }
     }
   }
 

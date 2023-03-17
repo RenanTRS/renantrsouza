@@ -14,10 +14,3 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-
-.focus-visible {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: $green-500;
-  border-radius: .25rem;
-}
