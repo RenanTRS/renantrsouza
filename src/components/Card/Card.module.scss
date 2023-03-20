@@ -5,12 +5,16 @@
 .card {
   background-color: $zinc-800;
   width: 232px;
-  max-height: 260px;
+  max-height: 212px;
   
   padding: .5rem;
   
   border: 1px solid $zinc-700;
   border-radius: .5rem;
+  
+  @include break.breakpoint(tablet-lg){
+    max-height: 254px;
+  }
   
   @include break.breakpoint(desktop) {
     max-height: 460px;
