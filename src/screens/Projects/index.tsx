@@ -74,9 +74,11 @@ export function Projects() {
 
   return (
     <section id="projects" className={style.projects}>
-      <Heading size="lg" asChild sub>
-        <h2>{isSmallScreen ? "Projetos" : "Meus Projetos"}</h2>
-      </Heading>
+      <header className={style.header}>
+        <Heading size="lg" asChild sub>
+          <h2>{isSmallScreen ? "Projetos" : "Meus Projetos"}</h2>
+        </Heading>
+      </header>
 
       <div className={style.wrapper}>
         {cards.map((card) => (
