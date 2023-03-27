@@ -39,9 +39,13 @@ export function Card(props: CardProps) {
 
   return (
     <div className={style.card}>
-      <Heading size="sm" asChild>
-        <h2>{props.title}</h2>
-      </Heading>
+      <div className={style.title}>
+        <img src={props.icon} alt="Icon from project" />
+
+        <Heading size="sm" asChild>
+          <h2>{props.title}</h2>
+        </Heading>
+      </div>
 
       <div className={style.cover}>
         <Image
