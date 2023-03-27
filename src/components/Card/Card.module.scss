@@ -129,7 +129,30 @@
   cursor: pointer;
 }
 
+.hero {
+  aspect-ratio: 16 / 9;
+  padding: 16%;
+  width: 100%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: .5rem;
+  
+  h2 {
+    background-color: #27272a8a;
+    backdrop-filter: blur(12.5px);
+
+    padding: .45rem .25rem 0;
+    font-size: 3rem;
+    border-radius: .5rem;
+
+    @include break.breakpoint(mobile) {
+      font-size: 3.5rem;
+    }
+  }
+}
 
 
 
