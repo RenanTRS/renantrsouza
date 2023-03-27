@@ -91,9 +91,10 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: min(80vw, 900px);
+
+  width: 100%;
   position: absolute;
-  border: none;
+  border: 1px solid $zinc-700;
 
   color: $white;
   padding: 1.5rem;
