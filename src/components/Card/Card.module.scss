@@ -4,8 +4,8 @@
 
 .card {
   background-color: $zinc-800;
-  width: 232px;
-  max-height: 212px;
+  width: 14.5rem; //232px;
+  max-height: 13.25rem; //212px;
   
   padding: .5rem;
   
@@ -13,7 +13,7 @@
   border-radius: .5rem;
   
   @include break.breakpoint(tablet-lg){
-    max-height: 254px;
+    max-height: 15.875rem; //254px;
   }
   
   @include break.breakpoint(desktop) {
@@ -106,8 +106,8 @@
   display: block;
   margin-left: auto;
 
-  height: 32px;
-  width: 32px;
+  height: 2rem; //32px;
+  width: 2rem; //32px;
 
   background-color: transparent;
   color: $white;
