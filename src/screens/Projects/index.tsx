@@ -5,71 +5,12 @@ import style from "./Projects.module.scss";
 
 import { useGetMedia } from "../../hooks/useGetMedia";
 
-export function Projects() {
+import { HomeProps } from "../../../pages";
+
+export function Projects(props: HomeProps) {
   const isSmallScreen = useGetMedia();
 
-  const cards = [
-    {
-      title: "Projeto 1",
-      id: "1",
-      cover: fakeCover,
-      mobileImg: "",
-      desktopImg: "",
-      description: "ldjsflksdjlkfjdsk",
-      gif: "",
-      logos: ["css", "html"]
-    },
-    {
-      title: "Projeto 2",
-      id: "2",
-      cover: fakeCover,
-      mobileImg: "",
-      desktopImg: "",
-      description: "ldjsflksdjlkfjdsk",
-      gif: "",
-      logos: ["css", "html"]
-    },
-    {
-      title: "Projeto 3",
-      id: "3",
-      cover: fakeCover,
-      mobileImg: "",
-      desktopImg: "",
-      description: "ldjsflksdjlkfjdsk",
-      gif: "",
-      logos: ["css", "html"]
-    },
-    {
-      title: "Projeto 1",
-      id: "4",
-      cover: fakeCover,
-      mobileImg: "",
-      desktopImg: "",
-      description: "ldjsflksdjlkfjdsk",
-      gif: "",
-      logos: ["css", "html"]
-    },
-    {
-      title: "Projeto 2",
-      id: "5",
-      cover: fakeCover,
-      mobileImg: "",
-      desktopImg: "",
-      description: "ldjsflksdjlkfjdsk",
-      gif: "",
-      logos: ["css", "html"]
-    },
-    {
-      title: "Projeto 3",
-      id: "6",
-      cover: fakeCover,
-      mobileImg: "",
-      desktopImg: "",
-      description: "ldjsflksdjlkfjdsk",
-      gif: "",
-      logos: ["css", "html"]
-    }
-  ];
+  const projects = props.projects;
 
   return (
     <section id="projects" className={style.projects}>
