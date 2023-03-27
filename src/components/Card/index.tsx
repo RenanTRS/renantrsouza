@@ -8,8 +8,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Roboto, Bebas_Neue } from "@next/font/google";
 
 import style from "./Card.module.scss";
-import { ArrowArcRight, ArrowRight, XSquare } from "phosphor-react";
-import { Text } from "../Text";
+import { ArrowRight, XSquare } from "phosphor-react";
 
 interface CardProps {
   title: string;
