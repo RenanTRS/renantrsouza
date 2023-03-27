@@ -53,6 +53,7 @@ export function Card(props: CardProps) {
           alt={`${props.title} cover`}
           fill
           style={{ objectFit: "contain" }}
+          priority
         />
       </div>
 
