@@ -21,13 +21,18 @@ export function Projects(props: HomeProps) {
       </header>
 
       <div className={style.wrapper}>
-        {cards.map((card) => (
+        {projects.map((project) => (
           <Card
-            cover={card.cover}
-            description={card.description}
-            logos={card.logos}
-            title={card.title}
-            key={card.id}
+            icon={project.icon.url}
+            cover={project.cover.url}
+            description={project.description}
+            logos={project.tecnologies}
+            title={project.name}
+            hero={project.hero.url}
+            gif={project.gif.url}
+            key={project.id}
+            linkToDeploy={project.linkDeploy}
+            linkToGit={project.linkGithub}
           />
         ))}
       </div>
