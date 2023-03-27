@@ -99,7 +99,10 @@
   color: $white;
   padding: 1.5rem;
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   border-radius: .5rem;
 }
 
