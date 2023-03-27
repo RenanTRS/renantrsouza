@@ -70,12 +70,18 @@ export function Card(props: CardProps) {
               <XSquare weight="bold" size={32} aria-label="fechar" />
             </Dialog.Close>
 
-            <div className={style.title}>
-              {/* <Image src={props.desktopImg!} alt="" /> */}
-              <Heading size="lg" asChild>
-                <h2>{props.title}</h2>
-              </Heading>
-              {/* <Image src={props.mobileImg!} alt="" /> */}
+            <div
+              className={style.hero}
+              style={{
+                backgroundImage: `url(${props.hero})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover"
+              }}
+            >
+              <Dialog.Title className={bebas.className}>
+                {props.title}
+              </Dialog.Title>
             </div>
 
             <Text>{props.description}</Text>
