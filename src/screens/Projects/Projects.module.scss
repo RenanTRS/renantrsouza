@@ -38,15 +38,14 @@
   }
 
   @include break.breakpoint(desktop) {
-    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
     padding-bottom: 2rem;
   }
 }
 
 .img {
   display: block;
-  width: 200px;
-  height: 100px;
+  width: 12.5rem; //200px;
+  height: 6.25rem; //100px;
 
   background-color: green;
 }
