@@ -113,8 +113,8 @@ export function Card(props: CardProps) {
             </div>
 
             <div className={style.linksToAccess}>
-              <Anchor type="linkToWeb" link="http://github.com/renantrs" />
-              <Anchor type="linkToGit" link="http://github.com/renantrs" />
+              <Anchor type="linkToWeb" link={props.linkToDeploy} />
+              <Anchor type="linkToGit" link={props.linkToGit} />
             </div>
           </Dialog.Content>
         </Dialog.Portal>
