@@ -15,11 +15,15 @@
   @include break.breakpoint(tablet-lg){
     max-height: 15.875rem; //254px;
   }
-  
-  @include break.breakpoint(desktop) {
-    max-height: 460px;
-    width: 480px;
-    padding: 1rem;
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    img {
+      width: 1.5rem;
+    }
   }
 }
 .cover {
