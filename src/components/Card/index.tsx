@@ -84,9 +84,20 @@ export function Card(props: CardProps) {
               </Dialog.Title>
             </div>
 
-            <Text>{props.description}</Text>
+            <Dialog.Description className={style.description}>
+              {props.description}
+            </Dialog.Description>
 
-            {/* <Image src={props.gif!} alt="" className={style.gif} /> */}
+            <div className={style.gif}>
+              <Image
+                src={props.gif!}
+                alt="Gif demo on screen desktop"
+                className={style.gif}
+                fill
+                style={{ objectFit: "contain" }}
+                priority
+              />
+            </div>
 
             <div className={style.tecnologies}>
               {imgs.map((img) => (
