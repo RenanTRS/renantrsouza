@@ -3,7 +3,6 @@ import { Heading } from "../../components/Heading";
 
 import style from "./Projects.module.scss";
 
-import fakeCover from "../../assets/fake-cover.png";
 import { useGetMedia } from "../../hooks/useGetMedia";
 
 export function Projects() {
