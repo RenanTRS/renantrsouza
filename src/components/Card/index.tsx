@@ -5,7 +5,7 @@ import { tecnologies } from "../../utils/tecnologies";
 
 import * as Dialog from "@radix-ui/react-dialog";
 
-import { Roboto } from "@next/font/google";
+import { Roboto, Bebas_Neue } from "@next/font/google";
 
 import style from "./Card.module.scss";
 import { ArrowArcRight, ArrowRight, XSquare } from "phosphor-react";
@@ -20,6 +20,12 @@ interface CardProps {
   gif?: string;
   logos: Array<string>;
 }
+
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap"
+});
 
 const roboto = Roboto({
   subsets: ["latin"],
