@@ -11,13 +11,15 @@ import style from "./Card.module.scss";
 import { ArrowRight, XSquare } from "phosphor-react";
 
 interface CardProps {
+  icon: string;
   title: string;
-  cover: any;
-  mobileImg?: string;
-  desktopImg?: string;
+  cover: string;
+  hero?: string;
   description: string;
   gif?: string;
   logos: Array<string>;
+  linkToDeploy: string;
+  linkToGit: string;
 }
 
 const bebas = Bebas_Neue({
