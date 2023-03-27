@@ -104,6 +104,14 @@
   align-items: center;
   gap: 2rem;
   border-radius: .5rem;
+  overflow-y: scroll !important;
+  height: 100vh;
+  z-index: 100;
+
+  @include break.breakpoint(mobile) {
+    width: 31rem; //496px;
+    height: 80vh;
+  }
 }
 
 .close {
