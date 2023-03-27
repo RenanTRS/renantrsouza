@@ -14,7 +14,49 @@ const roboto = Roboto({
   display: "swap"
 });
 
-export default function Home() {
+const GET_LESSONS_QUERY = gql`
+  query Projects {
+    projects {
+      id
+      icon {
+        url
+      }
+      name
+      cover {
+        url
+      }
+      hero {
+        url
+      }
+      description
+      gif {
+        url
+      }
+      tecnologies
+      linkDeploy
+      linkGithub
+    }
+  }
+`;
+
+interface Project {
+  id: string;
+  icon: { url: string };
+  name: string;
+  cover: { url: string };
+  hero: { url: string };
+  description: string;
+  gif: { url: string };
+  tecnologies: Array<string>;
+  linkDeploy: string;
+  linkGithub: string;
+}
+
+export interface HomeProps {
+  projects: Project[];
+}
+
+export default function Home(props: HomeProps) {
   return (
     <>
       <Head>
@@ -28,7 +70,7 @@ export default function Home() {
           <div className="container">
             <Main />
             <About />
-            <Projects />
+            <Projects projects={props.projects} />
           </div>
         </main>
       </div>
