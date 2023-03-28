@@ -172,8 +172,18 @@
   }
 }
 
+.tecnologies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .linksToAccess {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
+
+  @include break.breakpoint(mobile) {
+    gap: 4rem;
+  }
 }
