@@ -18,7 +18,7 @@ interface CardProps {
   description: string;
   gif?: string;
   logos: Array<string>;
-  linkToDeploy: string;
+  linkToDeploy?: string;
   linkToGit: string;
 }
 
@@ -34,23 +34,33 @@ const roboto = Roboto({
   display: "swap"
 });
 
-export function Card(props: CardProps) {
-  const imgs = tecnologies.filter((index) => props.logos.includes(index.name));
+export function Card({
+  icon,
+  title,
+  cover,
+  hero,
+  description,
+  gif,
+  logos,
+  linkToDeploy,
+  linkToGit
+}: CardProps) {
+  const imgs = tecnologies.filter((index) => logos.includes(index.name));
 
   return (
     <div className={style.card}>
       <div className={style.title}>
-        <img src={props.icon} alt="Icon from project" />
+        <img src={icon} alt="Icon from project" />
 
         <Heading size="sm" asChild>
-          <h2>{props.title}</h2>
+          <h2>{title}</h2>
         </Heading>
       </div>
 
       <div className={style.cover}>
         <Image
-          src={props.cover}
-          alt={`${props.title} cover`}
+          src={cover}
+          alt={`${title} cover`}
           fill
           style={{ objectFit: "contain" }}
           priority
@@ -73,31 +83,31 @@ export function Card(props: CardProps) {
             <div
               className={style.hero}
               style={{
-                backgroundImage: `url(${props.hero})`,
+                backgroundImage: `url(${hero})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 backgroundSize: "cover"
               }}
             >
-              <Dialog.Title className={bebas.className}>
-                {props.title}
-              </Dialog.Title>
+              <Dialog.Title className={bebas.className}>{title}</Dialog.Title>
             </div>
 
             <Dialog.Description className={style.description}>
-              {props.description}
+              {description}
             </Dialog.Description>
 
-            <div className={style.gif}>
-              <Image
-                src={props.gif!}
-                alt="Gif demo on screen desktop"
-                className={style.gif}
-                fill
-                style={{ objectFit: "contain" }}
-                priority
-              />
-            </div>
+            {gif && (
+              <div className={style.gif}>
+                <Image
+                  src={gif!}
+                  alt="Gif demo on screen desktop"
+                  className={style.gif}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
+              </div>
+            )}
 
             <div className={style.tecnologies}>
               {imgs.map((img) => (
@@ -113,8 +123,9 @@ export function Card(props: CardProps) {
             </div>
 
             <div className={style.linksToAccess}>
-              <Anchor type="linkToWeb" link={props.linkToDeploy} />
-              <Anchor type="linkToGit" link={props.linkToGit} />
+              {linkToDeploy && <Anchor type="linkToWeb" link={linkToDeploy} />}
+
+              <Anchor type="linkToGit" link={linkToGit} />
             </div>
           </Dialog.Content>
         </Dialog.Portal>

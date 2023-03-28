@@ -29,7 +29,7 @@ export function Projects(props: HomeProps) {
             logos={project.tecnologies}
             title={project.name}
             hero={project.hero.url}
-            gif={project.gif.url}
+            gif={project.gif?.url}
             key={project.id}
             linkToDeploy={project.linkDeploy}
             linkToGit={project.linkGithub}

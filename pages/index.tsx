@@ -46,9 +46,9 @@ interface Project {
   cover: { url: string };
   hero: { url: string };
   description: string;
-  gif: { url: string };
+  gif?: { url: string };
   tecnologies: Array<string>;
-  linkDeploy: string;
+  linkDeploy?: string;
   linkGithub: string;
 }
 
