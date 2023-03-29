@@ -48,9 +48,9 @@ export function Card({
   const imgs = tecnologies.filter((index) => logos.includes(index.name));
 
   return (
-    <div className={style.card}>
+    <div className={style.card} data-testid="card">
       <div className={style.title}>
-        <img src={icon} alt="Icon from project" />
+        <Image src={icon} alt="Icon from project" width={24} height={24} />
 
         <Heading size="sm" asChild>
           <h2>{title}</h2>
