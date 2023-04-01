@@ -62,6 +62,7 @@ export function Card({
           src={cover}
           alt={`${title} cover`}
           fill
+          sizes="13.375rem"
           style={{ objectFit: "contain" }}
           priority
         />
@@ -89,7 +90,12 @@ export function Card({
                 backgroundSize: "cover"
               }}
             >
-              <Dialog.Title className={bebas.className}>{title}</Dialog.Title>
+              <Dialog.Title
+                className={bebas.className}
+                data-testid="titleDialog"
+              >
+                {title}
+              </Dialog.Title>
             </div>
 
             <Dialog.Description className={style.description}>
