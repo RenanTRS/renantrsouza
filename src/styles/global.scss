@@ -1,6 +1,6 @@
 @use "./breakpoints" as break;
+@use "./variables" as *;
 @forward "./util";
-@import "./variables";
 
 .body {
   background-color: $zinc-900;
@@ -34,22 +34,23 @@
 .container {
   background-color: transparent;
   color: $white;
-  background-image: url("../assets/backgrounds/mobile.svg");
+  background-image: url("/backgrounds/mobile.svg");
   
   padding: 0 1.25rem;
 
-  @extend .flex;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
   @include break.breakpoint(mobile) {
     display: block;
   }
   @include break.raw-breakpoint(26.6875em){//427px
-    background-image: url("../assets/backgrounds/tablet.svg");
+    background-image: url("/backgrounds/tablet.svg");
   }
   
   @include break.breakpoint(tablet-lg) {
-    background-image: url("../assets/backgrounds/desktop.svg");
+    background-image: url("/backgrounds/desktop.svg");
   }
   @include break.breakpoint(desktop) {
     padding: 0 auto;
