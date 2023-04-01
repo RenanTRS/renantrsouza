@@ -4,9 +4,9 @@
 .hero {
   display: flex;
   align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem; //24px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem; //24px;
   margin-inline: auto;
 
   width: 100%;
@@ -28,38 +28,18 @@
   aspect-ratio: 1/1;
 
   width: 8.5rem;
-
+  
   @include break.breakpoint(mobile) {
     max-width: 18.5rem;
   }
 
   img {
-    width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
-    height: clamp(6.25rem, 25vh, 15rem); //100px 25vh 240px
-    
     border-radius: 50%;
-
-    
-    @include break.portrait(33.9375em) {
-      width: 9rem;
-      height: 9rem;
-    }
-
-    @include break.breakpoint(tablet) {
-      width: 20rem;
-      height: 20rem;
-    }
-    @include break.landscape(52.75em) {
-      width: clamp(3.05rem, 42.7vw, 15rem);
-      //height: 6.25rem;
-      //width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
-      height: clamp(6.25rem, 52vh, 15rem); //100px 53vh 240px
-    }
   }
 }
 
 .title {
-  @extend .flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 
