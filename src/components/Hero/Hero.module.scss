@@ -7,11 +7,13 @@
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem; //24px;
+  margin-inline: auto;
 
   width: 100%;
     
   @include break.breakpoint(tablet) {
     flex-direction: row-reverse;
+    width: 70%;
     gap: 1.5rem;
   }
   @include break.landscape() {
@@ -20,14 +22,16 @@
 }
 
 .avatar {
+  flex: 1;
   position: relative;
 
-  @extend .flex;
-  justify-content: center;
+  aspect-ratio: 1/1;
 
-  background-image: url("../../assets/blob.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 8.5rem;
+
+  @include break.breakpoint(mobile) {
+    max-width: 18.5rem;
+  }
 
   img {
     width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
