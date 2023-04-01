@@ -1,9 +1,9 @@
 @use "../../styles/breakpoints" as break;
-@forward "../../styles/util";
 @use "../../styles/variables" as *;
 
 .hero {
-  @extend .flex;
+  display: flex;
+  align-items: center;
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem; //24px;
