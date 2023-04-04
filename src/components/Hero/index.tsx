@@ -42,7 +42,7 @@ export function Hero() {
           <Link
             href={"https://web.whatsapp.com/send?phone=5592982362834"}
             target="_blank"
-            aria-label="Link para o WhatsApp"
+            aria-label="WhatsApp"
           >
             <WhatsAppLogo aria-disabled />
           </Link>
@@ -50,7 +50,7 @@ export function Hero() {
           <Link
             href={"https://www.linkedin.com/in/renantrsouza/"}
             target="_blank"
-            aria-label="Link para o LinkedIn"
+            aria-label="LinkedIn"
           >
             <LinkedInLogo aria-disabled />
           </Link>
@@ -58,7 +58,7 @@ export function Hero() {
           <Link
             href={"https://github.com/RenanTRS"}
             target="_blank"
-            aria-label="Link para o GitHub"
+            aria-label="GitHub"
           >
             <GitLogo aria-disabled />
           </Link>

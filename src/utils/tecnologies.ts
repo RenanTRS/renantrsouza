@@ -7,7 +7,7 @@ export const tecnologies = [
   {
     name: "reactjs",
     source: "/tecnologies/reactjs.svg",
-    alt: "Logo do ReactJs. um átomo"
+    alt: "Logo do ReactJs, um átomo."
   },
   {
     name: "vitejs",

@@ -35,6 +35,7 @@ export function Tecnologies(props: Props) {
             height={40}
             priority
             key={logo.name}
+            data-testid="tecnologies-logo"
           />
         );
       })}

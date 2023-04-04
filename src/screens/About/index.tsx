@@ -13,7 +13,7 @@ export function About() {
         </Heading>
 
         <div className={style.content}>
-          <div className={style.icons}>
+          <div className={style.icons} aria-hidden>
             <Tecnologies className={style.icon} />
           </div>
 

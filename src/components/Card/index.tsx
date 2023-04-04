@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Heading } from "../Heading";
 import { Anchor } from "../Anchor";
 import { tecnologies } from "../../utils/tecnologies";
+import { useVibrate } from "../../hooks/useVibrate";
 
 import * as Dialog from "@radix-ui/react-dialog";
 
@@ -48,9 +49,13 @@ export function Card({
   const imgs = tecnologies.filter((index) => logos.includes(index.name));
 
   return (
-    <div className={style.card} data-testid="card">
+    <div
+      className={style.card}
+      data-testid="card"
+      araia-description={`Card do projeto ${title}`}
+    >
       <div className={style.title}>
-        <Image src={icon} alt="Icon from project" width={24} height={24} />
+        <Image src={icon} alt="Logo do projeto" width={24} height={24} />
 
         <Heading size="sm" asChild>
           <h2>{title}</h2>
@@ -60,7 +65,7 @@ export function Card({
       <div className={style.cover}>
         <Image
           src={cover}
-          alt={`${title} cover`}
+          alt={`Capa do projeto`}
           fill
           sizes="13.375rem"
           style={{ objectFit: "contain" }}
@@ -69,7 +74,11 @@ export function Card({
       </div>
 
       <Dialog.Root>
-        <Dialog.Trigger type="button" className={style.trigger}>
+        <Dialog.Trigger
+          type="button"
+          className={style.trigger}
+          onClick={() => useVibrate(60)}
+        >
           Acessar <ArrowRight weight="bold" />
         </Dialog.Trigger>
 
@@ -129,9 +138,19 @@ export function Card({
             </div>
 
             <div className={style.linksToAccess}>
-              {linkToDeploy && <Anchor type="linkToWeb" link={linkToDeploy} />}
+              {linkToDeploy && (
+                <Anchor
+                  type="linkToWeb"
+                  link={linkToDeploy}
+                  aria-label="Projeto em produção"
+                />
+              )}
 
-              <Anchor type="linkToGit" link={linkToGit} />
+              <Anchor
+                type="linkToGit"
+                link={linkToGit}
+                aria-label="Repositório do projeto"
+              />
             </div>
           </Dialog.Content>
         </Dialog.Portal>

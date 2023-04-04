@@ -105,16 +105,14 @@ describe("Projects component", () => {
       const titleCard = screen.getByText(mockOneProject[0].name);
       expect(titleCard).toBeInTheDocument();
 
-      const iconCard = screen.getByAltText("Icon from project");
+      const iconCard = screen.getByAltText("Logo do projeto");
       expect(iconCard).toBeInTheDocument();
     });
 
     it("should be able rendering the cover from project card", () => {
       render(<Projects projects={mockOneProject} />);
 
-      const coverProject = screen.getByAltText(
-        `${mockOneProject[0].name} cover`
-      );
+      const coverProject = screen.getByAltText("Capa do projeto");
       expect(coverProject).toBeInTheDocument();
     });
 

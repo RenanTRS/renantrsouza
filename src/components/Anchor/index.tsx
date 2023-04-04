@@ -38,6 +38,7 @@ export function Anchor({ type, link, ...props }: Anchor) {
       href={link!}
       target="_blank"
       onClick={() => useVibrate(60)}
+      {...props}
     >
       {type === "linkToWeb" ? (
         <>
