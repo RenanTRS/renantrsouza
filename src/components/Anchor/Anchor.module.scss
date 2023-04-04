@@ -1,13 +1,13 @@
 @use "../../styles/breakpoints" as break;
+@use "../../styles/variables" as *;
 @forward "../../styles/util";
-@import "../../styles/variables";
 
 .anchor {
-  @extend .flex;
-    gap: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 
   padding: .5rem .75rem;
-  //margin: .25rem;
 
   border: .4px solid $zinc-700;
   border-radius: .5rem;

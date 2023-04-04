@@ -39,13 +39,13 @@ describe("Hero component", () => {
 
       const download = screen.getByRole("link", { name: "Download CV" });
       const whatsappLink = screen.getByRole("link", {
-        name: "Link para o WhatsApp"
+        name: "WhatsApp"
       });
       const linkedinLink = screen.getByRole("link", {
-        name: "Link para o LinkedIn"
+        name: "LinkedIn"
       });
       const githubLink = screen.getByRole("link", {
-        name: "Link para o GitHub"
+        name: "GitHub"
       });
 
       expect(download).toHaveAttribute(

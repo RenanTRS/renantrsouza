@@ -1,0 +1,185 @@
+@use "../../styles/breakpoints" as break;
+@use "../../styles/variables" as *;
+@forward "../../styles/util";
+
+.card {
+  background-color: $zinc-800;
+  width: 14.5rem; //232px;
+  max-height: 13.25rem; //212px;
+  
+  padding: .5rem;
+  
+  border: 1px solid $zinc-700;
+  border-radius: .5rem;
+  
+  @include break.breakpoint(tablet-lg){
+    max-height: 15.875rem; //254px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+  }
+}
+.cover {
+  position: relative;
+  max-width: 27.5rem;
+  aspect-ratio: 16 / 9;
+
+  margin-top: .5rem;
+
+  @include break.breakpoint(tablet-lg) {
+    margin-top: 1.5rem;
+  }
+
+  img {
+    border-radius: .5rem;
+    box-shadow: .25rem .25rem .5rem $shadow;
+  }
+}
+
+//Dialog
+
+.trigger {
+  background-color: $green-700;
+  color: $white;
+
+  font-size: 0.875rem;
+  font-weight: bold;
+  
+  border: 1px solid $zinc-700;
+  border-radius: .5rem;
+
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+
+  padding: .5rem .75rem;
+  margin-top: .5rem;
+  margin-inline: auto;
+  
+
+  cursor: pointer;
+
+  @extend .transition-colors;
+
+  &:hover, &:active {
+    background-color: $green-500;
+  }
+
+  @include break.breakpoint(tablet-lg){
+    font-size: 1rem;
+    padding: .75rem;
+    margin-top: 1.5rem;
+    margin-inline: auto;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #18181b80;
+}
+
+.content {
+  background-color: $zinc-900;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  position: absolute;
+  border: 1px solid $zinc-700;
+
+  color: $white;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-radius: .5rem;
+  overflow-y: scroll !important;
+  height: 100vh;
+  z-index: 100;
+
+  @include break.breakpoint(mobile) {
+    width: 31rem; //496px;
+    height: 80vh;
+  }
+}
+
+.close {
+  display: block;
+  margin-left: auto;
+
+  height: 2rem; //32px;
+  width: 2rem; //32px;
+
+  background-color: transparent;
+  color: $white;
+  
+  border: none;
+
+  cursor: pointer;
+}
+
+.hero {
+  aspect-ratio: 16 / 9;
+  padding: 16%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: .5rem;
+  
+  h2 {
+    background-color: #27272a8a;
+    backdrop-filter: blur(12.5px);
+
+    padding: .45rem .25rem 0;
+    font-size: 3rem;
+    border-radius: .5rem;
+
+    @include break.breakpoint(mobile) {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+.description {
+  text-align: justify;
+  font-size: 1rem;
+}
+
+.gif {
+  position: relative !important;
+  width: 100% !important;
+
+  img {
+    border-radius: .5rem;
+  }
+}
+
+.tecnologies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.linksToAccess {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  @include break.breakpoint(mobile) {
+    gap: 4rem;
+  }
+}

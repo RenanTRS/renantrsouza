@@ -9,14 +9,14 @@ export function Tecnologies(props: Props) {
   const iconNames = [
     "html",
     "css",
-    "styled-components",
+    "styledComponents",
     "sass",
     "javascript",
     "typescript",
     "reactjs",
     "vitejs",
     "jest",
-    "testing-library",
+    "testingLibrary",
     "graphql",
     "figma"
   ];
@@ -35,6 +35,7 @@ export function Tecnologies(props: Props) {
             height={40}
             priority
             key={logo.name}
+            data-testid="tecnologies-logo"
           />
         );
       })}

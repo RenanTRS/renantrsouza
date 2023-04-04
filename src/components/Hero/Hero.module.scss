@@ -1,17 +1,19 @@
 @use "../../styles/breakpoints" as break;
-@forward "../../styles/util";
 @use "../../styles/variables" as *;
 
 .hero {
-  @extend .flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem; //24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem; //24px;
+  margin-inline: auto;
 
   width: 100%;
     
   @include break.breakpoint(tablet) {
     flex-direction: row-reverse;
+    width: 70%;
     gap: 1.5rem;
   }
   @include break.landscape() {
@@ -20,42 +22,24 @@
 }
 
 .avatar {
+  flex: 1;
   position: relative;
 
-  @extend .flex;
-  justify-content: center;
+  aspect-ratio: 1/1;
 
-  background-image: url("../../assets/blob.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 8.5rem;
+  
+  @include break.breakpoint(mobile) {
+    max-width: 18.5rem;
+  }
 
   img {
-    width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
-    height: clamp(6.25rem, 25vh, 15rem); //100px 25vh 240px
-    
     border-radius: 50%;
-
-    
-    @include break.portrait(33.9375em) {
-      width: 9rem;
-      height: 9rem;
-    }
-
-    @include break.breakpoint(tablet) {
-      width: 20rem;
-      height: 20rem;
-    }
-    @include break.landscape(52.75em) {
-      width: clamp(3.05rem, 42.7vw, 15rem);
-      //height: 6.25rem;
-      //width: clamp(6.25rem, 100%, 15rem); //100px 100% 240px
-      height: clamp(6.25rem, 52vh, 15rem); //100px 53vh 240px
-    }
   }
 }
 
 .title {
-  @extend .flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 
@@ -79,14 +63,5 @@
     width: 100%;
 
     margin-top: .25rem;
-
-    a {
-      &:focus-visible {
-        outline-style: solid;
-        outline-width: 2px;
-        outline-color: $green-500;
-        border-radius: .25rem;
-      }
-    }
   }
 }

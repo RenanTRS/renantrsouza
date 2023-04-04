@@ -18,7 +18,7 @@ describe("About component", () => {
     it("should be able to render the images", () => {
       render(<About />);
 
-      const imgs = screen.getAllByRole("img");
+      const imgs = screen.getAllByTestId("tecnologies-logo");
 
       expect(imgs.length).toEqual(12);
     });

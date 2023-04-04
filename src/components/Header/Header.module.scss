@@ -1,13 +1,14 @@
 @use "../../styles/breakpoints" as break;
+@use "../../styles/variables" as *;
 @forward "../../styles/util";
-@import "../../styles/global";
-@import "../../styles/variables";
+@forward "../../styles/global";
 
 .mobile_header_container {
   @extend .background-color;
 
-  @extend .flex;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   width: 100vw;
   height: 3.438rem; //55px
@@ -28,10 +29,6 @@
     
     border: none;
     
-    &:focus-visible {
-      @extend .focus-visible;
-    }
-    
     @include break.breakpoint(desktop) {
       display: none;
     }
@@ -43,13 +40,16 @@
     z-index: 10;
   
   width: 100vw;
+  max-width: 1700px;
+  margin-left: auto;
   height: 3.5rem; //56px
   padding: 1.25rem .5rem; // 20px 8px
 
   border-bottom: 1px solid $zinc-700;
   
-  @extend .flex;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   
   @extend .background-color;
   
@@ -78,10 +78,10 @@
   
   width: 100%;
 
-  @extend .flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
 
   transition: .5s;
 
@@ -96,10 +96,10 @@
   }
 
   &__list {
-    @extend .flex;
-      align-items: end;
-      flex-direction: column;
-      gap: .75rem; //12px
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: .75rem; //12px
 
     padding-top: 4rem;
     padding-left: 4.375rem;
@@ -132,10 +132,6 @@
       color: $white;
     }
 
-    &:focus-visible{
-      @extend .focus-visible;
-    }
-
     @include break.breakpoint(desktop) {
       font-size: 1.125rem; //18px
     }
@@ -149,12 +145,6 @@
     
     @include break.breakpoint(desktop) {
       display: none;
-    }
-
-    a {
-      &:focus-visible {
-        @extend .focus-visible;
-      }
     }
   }
 

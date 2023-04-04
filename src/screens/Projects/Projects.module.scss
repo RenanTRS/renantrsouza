@@ -1,0 +1,59 @@
+@use "../../styles/variables" as *;
+@use "../../styles/breakpoints" as break;
+@forward "../../styles/util";
+
+.projects {
+  @extend .section;
+
+  min-height: 100vh;
+  width: 100%;
+
+  padding-top: 4.5rem;
+
+  @include break.breakpoint(desktop) {
+    padding-top: 6rem;
+  }
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+
+  width: 100%;
+
+  overflow-y: scroll;
+  height: 80vh;
+  padding-bottom: 1rem;
+
+  @include break.breakpoint(tablet) {
+    gap: .5rem;
+    height: inherit;
+  }
+
+  @include break.breakpoint(tablet-lg) {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  @include break.breakpoint(desktop) {
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+    padding-bottom: 2rem;
+  }
+}
+
+.img {
+  display: block;
+  width: 12.5rem; //200px;
+  height: 6.25rem; //100px;
+
+  background-color: green;
+}

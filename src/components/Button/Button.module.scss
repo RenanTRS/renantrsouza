@@ -1,4 +1,4 @@
-@import "../../styles/_variables";
+@use "../../styles/_variables" as *;
 
 .button {
   background-color: $green-700;
