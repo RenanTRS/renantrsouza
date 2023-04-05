@@ -4,8 +4,9 @@
 
 .projects {
   @extend .section;
+  position: relative;
 
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
 
   padding-top: 4.5rem;
@@ -27,19 +28,13 @@
 
   width: 100%;
 
-  overflow-y: scroll;
-  height: 80vh;
   padding-bottom: 1rem;
 
   @include break.breakpoint(tablet) {
     gap: .5rem;
-    height: inherit;
   }
 
   @include break.breakpoint(tablet-lg) {
-    &::-webkit-scrollbar {
-      display: none;
-    }
     width: 80%;
     margin-inline: auto;
   }
@@ -48,12 +43,4 @@
     grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
     padding-bottom: 2rem;
   }
-}
-
-.img {
-  display: block;
-  width: 12.5rem; //200px;
-  height: 6.25rem; //100px;
-
-  background-color: green;
 }
