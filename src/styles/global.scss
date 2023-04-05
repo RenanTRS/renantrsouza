@@ -10,8 +10,8 @@
   min-height: 100vh;
   width: 100%;
   
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .logo {
@@ -23,6 +23,14 @@
     }
     @include break.breakpoint(desktop-lg){
       width: 21.145rem;
+    }
+  }
+
+  &__footer {
+    width: 9.125rem;
+
+    @include break.breakpoint(tablet){
+      width: 21.125rem;
     }
   }
 }
@@ -64,6 +72,9 @@
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
+  &::-webkit-scrollbar {
+		display: none;
+  }
 }
 
 .absolute_zero {
