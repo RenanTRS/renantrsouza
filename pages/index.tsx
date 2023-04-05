@@ -7,6 +7,7 @@ import { About } from "../src/screens/About";
 import { Projects } from "../src/screens/Projects";
 import { gql } from "@apollo/client";
 import { client } from "../src/lib/apollo";
+import { Footer } from "../src/components/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -64,14 +65,15 @@ export default function Home(props: HomeProps) {
       </Head>
 
       <div className={`${roboto.className} body`}>
-        <main className="main">
-          <Header />
+        <Header />
 
+        <main className="main">
           <div className="container">
             <Main />
             <About />
             <Projects projects={props.projects} />
           </div>
+          <Footer />
         </main>
       </div>
     </>
