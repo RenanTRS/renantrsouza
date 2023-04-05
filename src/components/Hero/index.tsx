@@ -40,7 +40,7 @@ export function Hero() {
         <div className={style.links}>
           <Anchor type="download" />
           <Link
-            href={"https://web.whatsapp.com/send?phone=5592982362834"}
+            href={"https://wa.me/5592982362834"}
             target="_blank"
             aria-label="WhatsApp"
           >
