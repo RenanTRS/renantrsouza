@@ -13,7 +13,7 @@ export function Logo({ size = "header", ...props }: Props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
-      className={`${size === "header" ? "logo__header" : "footer"}`}
+      className={`${size === "header" ? "logo__header" : "logo__footer"}`}
     >
       <path
         d="M20.742 31.457v-6.352L7.898 20.816l-1.593-.562 1.593-.586 12.844-4.36V8.98L0 17.582v5.273l20.742 8.602z"
