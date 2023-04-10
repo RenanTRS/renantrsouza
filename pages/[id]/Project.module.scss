@@ -1,0 +1,120 @@
+@use "../../src/styles/variables" as *;
+@use "../../src/styles/breakpoints" as break;
+
+.container {
+  background-color: $zinc-900;
+  min-height: 100vh;
+
+  color: $white;
+}
+
+.header {
+  position: fixed;
+  background-color: $zinc-900;
+  height: 3.5rem;
+
+  width: 100%;
+
+  border-bottom: 1px solid $zinc-700;
+
+  padding: 0 .5rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  @include break.breakpoint(desktop) {
+    height: 5rem;
+  }
+  @include break.breakpoint(desktop-lg) {
+    height: 6.25rem;
+  }
+  
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1440px;
+    
+    a {
+      color: $gray-400;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: .25rem;
+  
+      transition: colors .5s;
+  
+      &:hover {
+        color: $white;
+      }
+  
+      @include break.breakpoint(desktop) {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+}
+
+.main {
+  padding-top: 3.5rem;
+
+  width: 100%;
+  max-width: 1112px;
+
+  margin-inline: auto;
+
+  @include break.breakpoint(desktop) {
+    padding-top: 5rem;
+  }
+  @include break.breakpoint(desktop-lg) {
+    padding-top: 6.25rem;
+  }
+}
+
+.hero {
+  margin-top: .5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 20vh;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include break.breakpoint(desktop) {
+    height: 70vh;
+    background-attachment: fixed;
+  }
+
+  h2 {
+    inset: 50%;
+
+    background-color: #27272a8a;
+    backdrop-filter: blur(12.5px);
+    border-radius: .5rem;
+    padding: .45rem .25rem 0;
+  }
+}
+
+.description {
+  margin-top: 1.5rem;
+}
+
+.demo {
+  margin-top: 1.5rem;
+}
+
+.tecnologies {
+  margin-top: 1.5rem;
+}
+
+.links {}
