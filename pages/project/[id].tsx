@@ -14,6 +14,7 @@ import { GetStaticPaths } from "next";
 import { Footer } from "../../src/components/Footer";
 import { Anchor } from "../../src/components/Anchor";
 import { useRouter } from "next/router";
+import { Roboto } from "@next/font/google";
 
 type StaticProps = {
   params: { id: string };
@@ -30,6 +31,12 @@ interface ProjectProps {
     linkGithub: string;
   };
 }
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap"
+});
 
 const GET_PROJECTS_QUERY = gql`
   query Projects {
@@ -49,7 +56,7 @@ function project({ project }: ProjectProps) {
   console.log(project.name);
 
   return (
-    <div className={style.container}>
+    <div className={`${style.container} ${roboto.className}`}>
       <header className={style.header}>
         <div>
           <Logo size="header" />
@@ -73,6 +80,7 @@ function project({ project }: ProjectProps) {
             <h2>{project.name}</h2>
           </Heading>
         </section>
+
         <section className={style.description}>
           <Heading size="md" asChild>
             <h2>Descrição:</h2>
@@ -111,27 +119,27 @@ function project({ project }: ProjectProps) {
             />
           ))}
         </section>
-      </main>
 
-      <div>
-        <Heading size="md" asChild>
-          <h2>Acesse:</h2>
-        </Heading>
+        <section>
+          <Heading size="md" asChild>
+            <h2>Acesse:</h2>
+          </Heading>
 
-        <Anchor
-          type="linkToGit"
-          link={project.linkGithub}
-          aria-label="Repositório do projeto"
-        />
-
-        {project.linkDeploy && (
           <Anchor
-            type="linkToWeb"
-            link={project.linkDeploy}
-            aria-label="Projeto em produção"
+            type="linkToGit"
+            link={project.linkGithub}
+            aria-label="Repositório do projeto"
           />
-        )}
-      </div>
+
+          {project.linkDeploy && (
+            <Anchor
+              type="linkToWeb"
+              link={project.linkDeploy}
+              aria-label="Projeto em produção"
+            />
+          )}
+        </section>
+      </main>
 
       <Footer />
     </div>
