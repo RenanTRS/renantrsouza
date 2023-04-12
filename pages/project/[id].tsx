@@ -5,7 +5,6 @@ import { Text } from "../../src/components/Text";
 
 import style from "./Project.module.scss";
 
-import fakeImg from "./frame13.png";
 import { tecnologies } from "../../src/utils/tecnologies";
 import Image from "next/image";
 import { gql } from "@apollo/client";
@@ -13,11 +12,15 @@ import { client } from "../../src/lib/apollo";
 import { GetStaticPaths } from "next";
 import { Footer } from "../../src/components/Footer";
 import { Anchor } from "../../src/components/Anchor";
-import { useRouter } from "next/router";
 import { Roboto } from "@next/font/google";
+import { ArrowUUpLeft } from "phosphor-react";
+import Head from "next/head";
 
 type StaticProps = {
   params: { id: string };
+};
+type ProjectId = {
+  id: string;
 };
 
 interface ProjectProps {
@@ -47,102 +50,107 @@ const GET_PROJECTS_QUERY = gql`
 `;
 
 function project({ project }: ProjectProps) {
-  const { back } = useRouter();
-
   const imgs = tecnologies.filter((index) =>
     project.tecnologies.includes(index.name)
   );
 
-  console.log(project.name);
-
   return (
-    <div className={`${style.container} ${roboto.className}`}>
-      <header className={style.header}>
-        <div>
-          <Logo size="header" />
+    <>
+      <Head>
+        <title>Renan T. R. Souza | {project.name}</title>
+      </Head>
+      <div className={`${style.container} ${roboto.className}`}>
+        <header className={style.header}>
+          <div>
+            <Logo size="header" />
 
-          <nav>
-            <Link href={"#projects"} onClick={() => back()}>
-              Voltar
-            </Link>
-          </nav>
-        </div>
-      </header>
+            <nav>
+              <Link href={"/#projects"}>
+                Voltar <ArrowUUpLeft weight="bold" />
+              </Link>
+            </nav>
+          </div>
+        </header>
 
-      <main className={style.main}>
-        <section
-          style={{
-            backgroundImage: `url(${fakeImg.src})`
-          }}
-          className={style.hero}
-        >
-          <Heading size="lg" asChild>
-            <h2>{project.name}</h2>
-          </Heading>
-        </section>
+        <main className={style.main}>
+          <section
+            style={{
+              backgroundImage: `url(${project.hero.url})`
+            }}
+            className={style.hero}
+          >
+            <Heading size="lg" asChild>
+              <h2>{project.name}</h2>
+            </Heading>
+          </section>
 
-        <section className={style.description}>
-          <Heading size="md" asChild>
-            <h2>Descrição:</h2>
-          </Heading>
-
-          <Text>{project.description}</Text>
-        </section>
-
-        {project.gif?.url && (
-          <section className={style.demo}>
+          <section className={style.description}>
             <Heading size="md" asChild>
-              <h2>Demo:</h2>
+              <h2>Descrição:</h2>
             </Heading>
 
-            <Image
-              src={project.gif?.url!}
-              alt="Project demo on web"
-              width={1112}
-              height={720}
-            />
+            <Text>{project.description}</Text>
           </section>
-        )}
 
-        <section className={style.tecnologies}>
-          <Heading size="md" asChild>
-            <h2>Tecnologias:</h2>
-          </Heading>
+          {project.gif?.url && (
+            <section className={style.demo}>
+              <Heading size="md" asChild>
+                <h2>Demo:</h2>
+              </Heading>
 
-          {imgs.map((img) => (
-            <Image
-              src={img.source}
-              alt={img.alt}
-              key={img.name}
-              width={40}
-              height={40}
-            />
-          ))}
-        </section>
-
-        <section>
-          <Heading size="md" asChild>
-            <h2>Acesse:</h2>
-          </Heading>
-
-          <Anchor
-            type="linkToGit"
-            link={project.linkGithub}
-            aria-label="Repositório do projeto"
-          />
-
-          {project.linkDeploy && (
-            <Anchor
-              type="linkToWeb"
-              link={project.linkDeploy}
-              aria-label="Projeto em produção"
-            />
+              <img
+                src={project.gif?.url!}
+                alt="Project demo on web"
+                className={style.gif}
+              />
+            </section>
           )}
-        </section>
-      </main>
 
-      <Footer />
-    </div>
+          <section className={style.tecnologies}>
+            <Heading size="md" asChild>
+              <h2>Tecnologias:</h2>
+            </Heading>
+
+            <div className={style.img}>
+              {imgs.map((img) => (
+                <Image
+                  src={img.source}
+                  alt={img.alt}
+                  key={img.name}
+                  width={40}
+                  height={40}
+                  title={img.name}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section className={style.links}>
+            <Heading size="md" asChild>
+              <h2>Acesse:</h2>
+            </Heading>
+
+            <div className={style.anchors}>
+              <Anchor
+                type="linkToGit"
+                link={project.linkGithub}
+                aria-label="Repositório do projeto"
+              />
+
+              {project.linkDeploy && (
+                <Anchor
+                  type="linkToWeb"
+                  link={project.linkDeploy}
+                  aria-label="Projeto em produção"
+                />
+              )}
+            </div>
+          </section>
+        </main>
+
+        <Footer />
+      </div>
+    </>
   );
 }
 
@@ -152,7 +160,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query({ query: GET_PROJECTS_QUERY });
   const projects = data.projects;
 
-  const paths = projects.map((project: any) => ({
+  const paths = projects.map((project: ProjectId) => ({
     params: { id: project.id }
   }));
 
