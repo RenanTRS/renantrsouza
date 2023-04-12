@@ -47,6 +47,9 @@
       padding: .25rem;
   
       transition: colors .5s;
+
+      display: flex;
+      gap: .5rem;
   
       &:hover {
         color: $white;
@@ -61,7 +64,8 @@
 }
 
 .main {
-  padding-top: 3.5rem;
+  padding: 3.5rem .5rem 0;
+
 
   width: 100%;
   max-width: 1112px;
@@ -69,10 +73,10 @@
   margin-inline: auto;
 
   @include break.breakpoint(desktop) {
-    padding-top: 5rem;
+    padding: 5rem 0 0;
   }
   @include break.breakpoint(desktop-lg) {
-    padding-top: 6.25rem;
+    padding: 6.25rem 0 0;
   }
 }
 
@@ -86,13 +90,15 @@
   width: 100%;
   height: 20vh;
   
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: 50% 10%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 
   @include break.breakpoint(desktop) {
     height: 70vh;
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   h2 {
@@ -111,10 +117,41 @@
 
 .demo {
   margin-top: 1.5rem;
+
+  .gif {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: .5rem;
+    border: 1px solid $zinc-700;
+  }
 }
 
 .tecnologies {
   margin-top: 1.5rem;
+
+  .img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+
+    user-select: none;
+
+    @include break.breakpoint(desktop) {
+      justify-content: flex-start;
+    }
+  }
 }
 
-.links {}
+.links {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  .anchors {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    user-select: none;
+  }
+}
