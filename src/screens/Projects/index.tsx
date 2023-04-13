@@ -23,16 +23,11 @@ export function Projects(props: HomeProps) {
       <div className={style.wrapper}>
         {projects.map((project) => (
           <Card
+            id={project.id}
             icon={project.icon.url}
             cover={project.cover.url}
-            description={project.description}
-            logos={project.tecnologies}
             title={project.name}
-            hero={project.hero.url}
-            gif={project.gif?.url}
             key={project.id}
-            linkToDeploy={project.linkDeploy}
-            linkToGit={project.linkGithub}
           />
         ))}
       </div>
