@@ -191,6 +191,7 @@ export const getStaticProps = async ({ params }: StaticProps) => {
   return {
     props: {
       project: data.projects[0]
-    }
+    },
+    revalidate: 10 //seconds
   };
 };
