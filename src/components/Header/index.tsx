@@ -14,6 +14,11 @@ export function Header() {
     useVibrate(60);
   };
 
+  const handleRedirect = () => {
+    setIsMenuActive(!isMenuActive);
+    useVibrate(45);
+  };
+
   return (
     <>
       <header className={style.header}>
@@ -45,7 +50,7 @@ export function Header() {
               <Link
                 href="#home"
                 className={style.nav__link}
-                onClick={() => useVibrate(45)}
+                onClick={() => handleRedirect()}
               >
                 Home
               </Link>
@@ -54,7 +59,7 @@ export function Header() {
               <Link
                 href="#about"
                 className={style.nav__link}
-                onClick={() => useVibrate(45)}
+                onClick={() => handleRedirect()}
               >
                 Sobre mim
               </Link>
@@ -63,7 +68,7 @@ export function Header() {
               <Link
                 href="#projects"
                 className={style.nav__link}
-                onClick={() => useVibrate(45)}
+                onClick={() => handleRedirect()}
               >
                 Meus projetos
               </Link>
@@ -72,9 +77,9 @@ export function Header() {
               <Link
                 href="#contact"
                 className={style.nav__link}
-                onClick={() => useVibrate(45)}
+                onClick={() => handleRedirect()}
               >
-                Contato
+                Contatos
               </Link>
             </li>
           </ul>

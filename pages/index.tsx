@@ -15,7 +15,7 @@ const roboto = Roboto({
   display: "swap"
 });
 
-const GET_LESSONS_QUERY = gql`
+const GET_PROJECTS_QUERY = gql`
   query Projects {
     projects {
       id
@@ -26,16 +26,6 @@ const GET_LESSONS_QUERY = gql`
       cover {
         url
       }
-      hero {
-        url
-      }
-      description
-      gif {
-        url
-      }
-      tecnologies
-      linkDeploy
-      linkGithub
     }
   }
 `;
@@ -45,12 +35,6 @@ interface Project {
   icon: { url: string };
   name: string;
   cover: { url: string };
-  hero: { url: string };
-  description: string;
-  gif?: { url: string };
-  tecnologies: Array<string>;
-  linkDeploy?: string;
-  linkGithub: string;
 }
 
 export interface HomeProps {
@@ -81,7 +65,7 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps = async () => {
-  const { data } = await client.query({ query: GET_LESSONS_QUERY });
+  const { data } = await client.query({ query: GET_PROJECTS_QUERY });
 
   return {
     props: {

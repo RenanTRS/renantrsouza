@@ -2,18 +2,21 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Projects } from "./";
 
+jest.mock("next/router", () => ({
+  useRouter() {
+    return {
+      route: "/",
+      push: jest.fn()
+    };
+  }
+}));
+
 const mockOneProject = [
   {
     id: "1",
     icon: { url: "https://media.graphassets.com/bCr89R2ROmeKbIwACrBQ" },
     name: "gitapp",
-    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" },
-    hero: { url: "https://media.graphassets.com/ttvGlrRDRRC2ZM4z8n4Q" },
-    description: "A description here",
-    gif: { url: "https://media.graphassets.com/HWkwPiQQ8irwCugUXNLk" },
-    tecnologies: ["reactjs", "typescript"],
-    linkDeploy: "https://github-app-renantrs.vercel.app/",
-    linkGithub: "https://github.com/RenanTRS/github-app"
+    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" }
   }
 ];
 
@@ -22,25 +25,13 @@ const mockTwoProject = [
     id: "1",
     icon: { url: "https://media.graphassets.com/bCr89R2ROmeKbIwACrBQ" },
     name: "gitapp",
-    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" },
-    hero: { url: "https://media.graphassets.com/ttvGlrRDRRC2ZM4z8n4Q" },
-    description: "A description here",
-    gif: { url: "https://media.graphassets.com/HWkwPiQQ8irwCugUXNLk" },
-    tecnologies: ["reactjs", "typescript"],
-    linkDeploy: "https://github-app-renantrs.vercel.app/",
-    linkGithub: "https://github.com/RenanTRS/github-app"
+    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" }
   },
   {
     id: "2",
     icon: { url: "https://media.graphassets.com/bCr89R2ROmeKbIwACrBQ" },
     name: "someone",
-    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" },
-    hero: { url: "https://media.graphassets.com/ttvGlrRDRRC2ZM4z8n4Q" },
-    description: "A description here",
-    gif: { url: "https://media.graphassets.com/HWkwPiQQ8irwCugUXNLk" },
-    tecnologies: ["reactjs", "typescript"],
-    linkDeploy: "https://github-app-renantrs.vercel.app/",
-    linkGithub: "https://github.com/RenanTRS/github-app"
+    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" }
   }
 ];
 

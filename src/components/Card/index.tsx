@@ -1,52 +1,22 @@
 import Image from "next/image";
 import { Heading } from "../Heading";
-import { Anchor } from "../Anchor";
-import { tecnologies } from "../../utils/tecnologies";
-import { useVibrate } from "../../hooks/useVibrate";
-
-import * as Dialog from "@radix-ui/react-dialog";
-
-import { Roboto, Bebas_Neue } from "@next/font/google";
 
 import style from "./Card.module.scss";
-import { ArrowRight, XSquare } from "phosphor-react";
+import { ArrowRight } from "phosphor-react";
+import { useRouter } from "next/router";
 
 interface CardProps {
+  id: string;
   icon: string;
   title: string;
   cover: string;
-  hero?: string;
-  description: string;
-  gif?: string;
-  logos: Array<string>;
-  linkToDeploy?: string;
-  linkToGit: string;
 }
 
-const bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap"
-});
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap"
-});
-
-export function Card({
-  icon,
-  title,
-  cover,
-  hero,
-  description,
-  gif,
-  logos,
-  linkToDeploy,
-  linkToGit
-}: CardProps) {
-  const imgs = tecnologies.filter((index) => logos.includes(index.name));
+export function Card({ id, icon, title, cover }: CardProps) {
+  const { push } = useRouter();
+  const handlePush = (id: string) => {
+    push(`/project/${id}`);
+  };
 
   return (
     <div
@@ -73,88 +43,13 @@ export function Card({
         />
       </div>
 
-      <Dialog.Root>
-        <Dialog.Trigger
-          type="button"
-          className={style.trigger}
-          onClick={() => useVibrate(60)}
-        >
-          Acessar <ArrowRight weight="bold" />
-        </Dialog.Trigger>
-
-        <Dialog.Portal>
-          <Dialog.Overlay className={style.overlay} />
-
-          <Dialog.Content className={`${style.content} ${roboto.className}`}>
-            <Dialog.Close className={style.close}>
-              <XSquare weight="bold" size={32} aria-label="fechar" />
-            </Dialog.Close>
-
-            <div
-              className={style.hero}
-              style={{
-                backgroundImage: `url(${hero})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover"
-              }}
-            >
-              <Dialog.Title
-                className={bebas.className}
-                data-testid="titleDialog"
-              >
-                {title}
-              </Dialog.Title>
-            </div>
-
-            <Dialog.Description className={style.description}>
-              {description}
-            </Dialog.Description>
-
-            {gif && (
-              <div className={style.gif}>
-                <Image
-                  src={gif!}
-                  alt="Gif demo on screen desktop"
-                  className={style.gif}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  priority
-                />
-              </div>
-            )}
-
-            <div className={style.tecnologies}>
-              {imgs.map((img) => (
-                <Image
-                  src={img.source}
-                  alt={img.alt}
-                  title={img.name}
-                  key={img.name}
-                  width={32}
-                  height={32}
-                />
-              ))}
-            </div>
-
-            <div className={style.linksToAccess}>
-              {linkToDeploy && (
-                <Anchor
-                  type="linkToWeb"
-                  link={linkToDeploy}
-                  aria-label="Projeto em produção"
-                />
-              )}
-
-              <Anchor
-                type="linkToGit"
-                link={linkToGit}
-                aria-label="Repositório do projeto"
-              />
-            </div>
-          </Dialog.Content>
-        </Dialog.Portal>
-      </Dialog.Root>
+      <button
+        type="button"
+        className={style.trigger}
+        onClick={() => handlePush(id)}
+      >
+        Acessar <ArrowRight weight="bold" />
+      </button>
     </div>
   );
 }
