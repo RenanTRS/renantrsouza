@@ -1,27 +1,9 @@
-import Link from "next/link";
-import { List, XSquare } from "phosphor-react";
-import { useState } from "react";
-import { Anchor } from "../Anchor";
-import { Logo } from "../Logo";
-import { useVibrate } from "../../hooks/useVibrate";
 import style from "./Header.module.scss";
 import { NavigationMobile } from "../NavigationMobile";
 import { NavigationDesktop } from "../NavigationDesktop";
 import { useGetMedia } from "../../hooks/useGetMedia";
 
 export function Header() {
-  /* const [isMenuActive, setIsMenuActive] = useState<boolean>(false); */
-
-  /* const handleShowMobileMenu = () => {
-    setIsMenuActive(!isMenuActive);
-    useVibrate(60);
-  }; */
-
-  /* const handleRedirect = () => {
-    setIsMenuActive(!isMenuActive);
-    useVibrate(45);
-  }; */
-
   const isLargeScreen = useGetMedia("desktop");
 
   return (
@@ -29,74 +11,6 @@ export function Header() {
       <header className={style.header}>
         {!isLargeScreen && <NavigationMobile />}
         {isLargeScreen && <NavigationDesktop />}
-        {/* <div className={style.main_container}>
-          <div className={style.mobile_header_container}>
-            <Logo size="header" aria-label="Logo do site." />
-
-            <button
-              className={style.mobile_header_container__toggle_button}
-              onClick={handleShowMobileMenu}
-              aria-label={isMenuActive ? "Fechar menu" : "Abrir menu"}
-              aria-controls="menu"
-              aria-haspopup="true"
-              aria-expanded={!isMenuActive ? "false" : "true"}
-            >
-              {!isMenuActive ? (
-                <List size={32} weight="bold" aria-disabled />
-              ) : (
-                <XSquare size={32} weight="bold" aria-disabled />
-              )}
-            </button>
-          </div>
- */}
-
-        {/* <nav
-          className={`${style.nav} ${isMenuActive ? style.nav__active : ""}`}
-          id="menu"
-        >
-          <ul className={style.nav__list} role="menubar">
-            <li role="menuitem">
-              <Link
-                href="#home"
-                className={style.nav__link}
-                onClick={() => handleRedirect()}
-              >
-                Home
-              </Link>
-            </li>
-            <li role="menuitem">
-              <Link
-                href="#about"
-                className={style.nav__link}
-                onClick={() => handleRedirect()}
-              >
-                Sobre mim
-              </Link>
-            </li>
-            <li role="menuitem">
-              <Link
-                href="#projects"
-                className={style.nav__link}
-                onClick={() => handleRedirect()}
-              >
-                Meus projetos
-              </Link>
-            </li>
-            <li role="menuitem">
-              <Link
-                href="#contact"
-                className={style.nav__link}
-                onClick={() => handleRedirect()}
-              >
-                Contatos
-              </Link>
-            </li>
-          </ul>
-
-          <div className={style.nav__download}>
-            <Anchor type="download" />
-          </div>
-        </nav> */}
       </header>
     </>
   );

@@ -3,43 +3,11 @@
 @forward "../../styles/util";
 @forward "../../styles/global";
 
-/* .mobile_header_container {
-  @extend .background-color;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100vw;
-  height: 3.438rem; //55px
-  padding: 1.25rem .5rem; // 20px 8px
-
-  position: absolute;
-    top: 0;
-    left: 0;
-
-  @include break.breakpoint(desktop){
-    position: relative;
-    width: auto;
-  }
-
-  &__toggle_button {
-    background-color: transparent;
-    color: $gray-200;
-    
-    border: none;
-    
-    @include break.breakpoint(desktop) {
-      display: none;
-    }
-  }
-} */
-
 .header {
   position: fixed;
   z-index: 1;
   width: 100%;
-  height: 3.5rem; //56px
+  height: 3.5rem;
 
   border-bottom: 1px solid $zinc-700;
   
@@ -47,110 +15,9 @@
 
   @include break.breakpoint(desktop){
     height: 5rem;
-    padding: 1.25rem .5rem; // 20px 8px
+    padding: 1.25rem .5rem;
   }
   @include break.breakpoint(desktop-lg){
     height: 6.25rem;
   }
-
 }
-/* .main_container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-inline: auto;
-  width: 100%;
-  max-width: 106.25rem;
-
-  font-weight: bold;
-} */
-//.nav {
-  //@extend .background-color;
-
-  //border-bottom: 1px solid $zinc-700;
-
-  //padding-right: .5rem;
-  //padding-bottom: 1rem;
-  
-  //position: absolute;
-    //top: -15rem; //-200px
-    //left: 0;
-    //z-index: -1;
-  
-  //width: 100%;
-
-  /* display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 1rem;
-
-  transition: .5s;
-
-  @include break.breakpoint(desktop) {
-    position: relative;
-    top: 0;
-    
-    padding: 0;
-    width: auto;    
-    border: none;
-    transition: none;
-  } */
-
-  /* &__list {
-    display: flex;
-    align-items: end;
-    flex-direction: column;
-    gap: .75rem; //12px
-
-    padding-top: 4rem;
-    padding-left: 4.375rem;
-
-    @include break.breakpoint(desktop) {
-      align-items: center;
-      flex-direction: row;
-      gap: 1.625rem; //26px
-      padding: 0;
-    }
-
-    li {
-      padding: .25rem 0;
-      @include break.breakpoint(desktop) {
-        padding: 0;
-      }
-    }
-  } */
-
-  /* &__link {
-    color: $gray-400;
-    text-decoration: none;
-    font-size: 1rem; //16px
-
-    padding: .25rem;
-
-    transition: colors .5s;
-
-    &:hover {
-      color: $white;
-    }
-
-    @include break.breakpoint(desktop) {
-      font-size: 1.125rem; //18px
-    }
-    @include break.breakpoint(desktop-lg) {
-      font-size: 1.5rem; //24px
-    }
-  } */
-
-  /* &__download {
-    margin-right: .25rem;
-    
-    @include break.breakpoint(desktop) {
-      display: none;
-    }
-  } */
-
-  /* &__active {
-    top: 0 !important;
-  } */
-//}
