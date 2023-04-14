@@ -4,8 +4,23 @@ import userEvent from "@testing-library/user-event";
 
 import { Header } from "./index";
 
+const mockMatchMedia = (value: boolean) => {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches: value,
+      media: query,
+      onchange: null,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn()
+    }))
+  });
+};
+
 describe("Header component", () => {
   describe("Logo", () => {
+    beforeEach(() => mockMatchMedia(true));
     it("should be able to render the logo", () => {
       render(<Header />);
 
@@ -16,6 +31,7 @@ describe("Header component", () => {
   });
 
   describe("Mobile menu", () => {
+    beforeEach(() => mockMatchMedia(false));
     it("should be able to render the button to toggle", () => {
       render(<Header />);
 
@@ -34,6 +50,7 @@ describe("Header component", () => {
   });
 
   describe("Navigation", () => {
+    beforeEach(() => mockMatchMedia(false));
     it("should be able to render a header menu navigation", () => {
       render(<Header />);
 

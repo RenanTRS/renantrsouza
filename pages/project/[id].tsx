@@ -62,7 +62,9 @@ function project({ project }: ProjectProps) {
       <div className={`${style.container} ${roboto.className}`}>
         <header className={style.header}>
           <div>
-            <Logo size="header" />
+            <Link href={"/#home"}>
+              <Logo size="header" />
+            </Link>
 
             <nav>
               <Link href={"/#projects"}>
@@ -191,6 +193,7 @@ export const getStaticProps = async ({ params }: StaticProps) => {
   return {
     props: {
       project: data.projects[0]
-    }
+    },
+    revalidate: 10 //seconds
   };
 };

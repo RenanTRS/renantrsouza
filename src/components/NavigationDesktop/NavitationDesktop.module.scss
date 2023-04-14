@@ -1,0 +1,46 @@
+@use "../../styles/variables" as *;
+@use "../../styles/breakpoints" as break;
+
+.container {
+  display: none;
+
+  @include break.breakpoint(desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    margin-inline: auto;
+    width: 100%;
+    max-width: 106.25rem;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1.625rem;
+
+    li {
+      padding: .5rem;
+    }
+  }
+
+  &__link {
+    color: $gray-400;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    padding: .25rem;
+
+    transition: colors .5s;
+
+    &:hover {
+      color: $white;
+    }
+
+    @include break.breakpoint(desktop-lg) {
+      font-size: 1.5rem;
+    }
+  }
+}
