@@ -3,7 +3,7 @@
 @forward "../../styles/util";
 @forward "../../styles/global";
 
-.mobile_header_container {
+/* .mobile_header_container {
   @extend .background-color;
 
   display: flex;
@@ -33,52 +33,54 @@
       display: none;
     }
   }
-}
+} */
 
 .header {
   position: fixed;
-    z-index: 10;
-  
-  width: 100vw;
-  max-width: 1700px;
-  margin-left: auto;
+  z-index: 1;
+  width: 100%;
   height: 3.5rem; //56px
-  padding: 1.25rem .5rem; // 20px 8px
 
   border-bottom: 1px solid $zinc-700;
   
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
   @extend .background-color;
-  
-  font-weight: bold;
 
   @include break.breakpoint(desktop){
     height: 5rem;
+    padding: 1.25rem .5rem; // 20px 8px
   }
   @include break.breakpoint(desktop-lg){
     height: 6.25rem;
   }
+
 }
-
-.nav {
-  @extend .background-color;
-
-  border-bottom: 1px solid $zinc-700;
-
-  padding-right: .5rem;
-  padding-bottom: 1rem;
-  
-  position: absolute;
-    top: -15rem; //-200px
-    left: 0;
-    z-index: -1;
-  
-  width: 100%;
-
+/* .main_container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-inline: auto;
+  width: 100%;
+  max-width: 106.25rem;
+
+  font-weight: bold;
+} */
+//.nav {
+  //@extend .background-color;
+
+  //border-bottom: 1px solid $zinc-700;
+
+  //padding-right: .5rem;
+  //padding-bottom: 1rem;
+  
+  //position: absolute;
+    //top: -15rem; //-200px
+    //left: 0;
+    //z-index: -1;
+  
+  //width: 100%;
+
+  /* display: flex;
   flex-direction: column;
   align-items: end;
   gap: 1rem;
@@ -87,15 +89,15 @@
 
   @include break.breakpoint(desktop) {
     position: relative;
-      top: 0;
+    top: 0;
     
     padding: 0;
     width: auto;    
     border: none;
     transition: none;
-  }
+  } */
 
-  &__list {
+  /* &__list {
     display: flex;
     align-items: end;
     flex-direction: column;
@@ -117,9 +119,9 @@
         padding: 0;
       }
     }
-  }
+  } */
 
-  &__link {
+  /* &__link {
     color: $gray-400;
     text-decoration: none;
     font-size: 1rem; //16px
@@ -138,17 +140,17 @@
     @include break.breakpoint(desktop-lg) {
       font-size: 1.5rem; //24px
     }
-  }
+  } */
 
-  &__download {
+  /* &__download {
     margin-right: .25rem;
     
     @include break.breakpoint(desktop) {
       display: none;
     }
-  }
+  } */
 
-  &__active {
+  /* &__active {
     top: 0 !important;
-  }
-}
+  } */
+//}
