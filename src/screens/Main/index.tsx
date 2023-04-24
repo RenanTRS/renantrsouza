@@ -14,7 +14,7 @@ export function Main() {
           <Tecnologies />
         </div>
 
-        <span className={style.scroll}>
+        <span className={`${style.scroll} ${style.scroll__animate}`}>
           <ScrollDown />
         </span>
       </div>

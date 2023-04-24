@@ -1,6 +1,23 @@
 @use "../../styles/breakpoints" as break;
 @forward "../../styles/util";
 
+@keyframes reveal-scroll {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animate-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1.5rem);
+  }
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -50,6 +67,8 @@
 .scroll{
   display: block;
   margin-top: 2rem;
+
+  animation: reveal-scroll 1000ms 3s ease-out backwards, animate-scroll 1000ms 2000ms ease-in-out alternate infinite;
 
   @include break.landscape(64em){
     display: none;
