@@ -12,6 +12,15 @@
   }
 }
 
+@keyframes avatar-ping {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1rem);
+  }
+}
+
 @keyframes name-title {
   from {
     opacity: 0;
@@ -66,6 +75,8 @@
 
   img {
     border-radius: 50%;
+
+    animation: avatar-ping 1500ms 2000ms ease-in-out alternate infinite;
   }  
   
   &__animate {
