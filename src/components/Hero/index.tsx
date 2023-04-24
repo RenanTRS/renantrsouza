@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <div className={style.hero}>
       <div
-        className={style.avatar}
+        className={`${style.avatar} ${style.avatar__animate}`}
         style={{
           backgroundImage: "url(/blob.svg)",
           backgroundRepeat: "no-repeat",
@@ -31,13 +31,15 @@ export function Hero() {
       </div>
 
       <div className={style.title}>
-        <Heading size="lg">Renan T. R. Souza</Heading>
+        <Heading size="lg" className={style.title__name_animate}>
+          Renan T. R. Souza
+        </Heading>
 
-        <Heading size="md" asChild>
+        <Heading size="md" asChild className={style.title__name_animate}>
           <h2>Front-end Developer</h2>
         </Heading>
 
-        <div className={style.links}>
+        <div className={`${style.links} ${style.links__animate}`}>
           <Anchor type="download" />
           <Link
             href={"https://wa.me/5592982362834"}

@@ -1,6 +1,6 @@
 import { Slot } from "@radix-ui/react-slot";
 import clsx from "clsx";
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import style from "./Heading.module.scss";
 import { Bebas_Neue } from "@next/font/google";
 
@@ -48,7 +48,7 @@ export function Heading({
   }
   return (
     <Component
-      className={clsx(`${bebasNeue.className}`, {
+      className={clsx(`${bebasNeue.className} ${className}`, {
         [style.size__lg]: size === "lg",
         [style.size__md]: size === "md",
         [style.size__sm]: size === "sm"
