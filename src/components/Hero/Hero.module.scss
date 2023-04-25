@@ -1,16 +1,8 @@
 @use "../../styles/breakpoints" as break;
 @use "../../styles/variables" as *;
+@use "../../styles/keyframes";
 
-@keyframes mobile-avatar-motion {
-  from {
-    transform: translateY(1.5rem);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+
 @keyframes avatar-motion {
   0% {
     transform: scale(0);
@@ -31,16 +23,6 @@
   }
 }
 
-@keyframes mobile-name-title {
-  from {
-    opacity: 0;
-    transform: translateY(1.5rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @keyframes name-title {
   from {
     opacity: 0;
@@ -96,11 +78,11 @@
   img {
     border-radius: 50%;
 
-    animation: avatar-ping 1500ms 2000ms ease-in-out alternate infinite;
+    animation: ping-animate 1500ms 2000ms ease-in-out alternate infinite;
   }  
   
   &__animate {
-    animation: mobile-avatar-motion 2000ms ease-out backwards;
+    animation: reveal-animate 2000ms ease-out backwards;
     
     @include break.breakpoint(desktop){
       animation: avatar-motion 2000ms ease-out backwards;
@@ -114,7 +96,7 @@
   align-items: center;
 
   &__name_animate {
-    animation: mobile-name-title 1000ms 400ms ease-out backwards;
+    animation: reveal-animate 1000ms 400ms ease-out backwards;
 
     @include break.breakpoint(desktop) {
       animation: name-title 1000ms 1000ms ease-out backwards;
