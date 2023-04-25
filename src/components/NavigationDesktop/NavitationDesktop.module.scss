@@ -1,5 +1,6 @@
 @use "../../styles/variables" as *;
 @use "../../styles/breakpoints" as break;
+@use "../../styles/keyframes";
 
 .container {
   display: none;
@@ -23,6 +24,8 @@
 
     li {
       padding: .5rem;
+
+      animation: reveal-animate 1000ms ease-out backwards;
     }
   }
 
