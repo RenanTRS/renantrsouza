@@ -1,4 +1,5 @@
 @use "../../styles/breakpoints" as break;
+@use "../../styles/keyframes";
 @forward "../../styles/util";
 
 @keyframes reveal-scroll {
@@ -7,14 +8,6 @@
   }
   to {
     opacity: 1;
-  }
-}
-@keyframes animate-scroll {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(1.5rem);
   }
 }
 
@@ -68,7 +61,7 @@
   display: block;
   margin-top: 2rem;
 
-  animation: reveal-scroll 1000ms 3s ease-out backwards, animate-scroll 1000ms 2000ms ease-in-out alternate infinite;
+  animation: reveal-scroll 1000ms 3s ease-out backwards, ping-animate 1000ms 2000ms ease-in-out alternate infinite;
 
   @include break.landscape(64em){
     display: none;
