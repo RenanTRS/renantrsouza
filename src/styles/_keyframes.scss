@@ -1,52 +1,19 @@
-@keyframes blobone-sm-m {
-  0% {
-    top: 0;
-    left: -100%;
+@keyframes reveal-animate {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
   }
-  20% {
-    top: -10%;
-    left: -70%;
-  }
-  40%{
-    top: -20%;
-    left: -30%;
-  }
-  80% {
-    top: -10%;
-    left: -70%;
-  }
-  100% {
-    top: 0;
-    left: -100%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@keyframes blobtwo-sm-m {
-  0% {
-    bottom: 0;
-    right: -70%;
+
+@keyframes ping-animate {
+  from {
+    transform: translateY(0);
   }
-  16% {
-    bottom: 10%;
-    right: -30%;
-  }
-  32%{
-    bottom: 20%;
-    right: -50%;
-  }
-  48% {
-    bottom: 30%;
-    right: -60%;
-  }
-  64% {
-    bottom: 20%;
-    right: -50%;
-  }
-  80% {
-    bottom: 10%;
-    right: -30%;
-  }
-  100% {
-    bottom: 0;
-    right: -70%;
+  to {
+    transform: translateY(1rem);
   }
 }
