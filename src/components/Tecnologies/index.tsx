@@ -30,7 +30,7 @@ export function Tecnologies(props: Props) {
           <Image
             src={logo.source}
             alt={logo.alt}
-            className={`${props.className} ${style.animate}`}
+            className={props.className}
             width={40}
             height={40}
             priority

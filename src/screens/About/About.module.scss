@@ -1,4 +1,5 @@
 @use "../../styles/breakpoints" as break;
+@use "../../styles/keyframes";
 @forward "../../styles/util";
 
 .about {
@@ -11,6 +12,12 @@
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+
+  &__scroll {
+    &__animate {
+      animation: show-animate 1000ms 2500ms ease-out backwards, ping-animate 1000ms 2000ms ease-in-out alternate infinite;
+    }
+  }
 
   @include break.portrait() {
     display: block;
@@ -34,6 +41,10 @@
   
   .heading {
     margin-inline: auto;
+
+    &__animate {
+      animation: reveal-animate 1500ms ease-out forwards;
+    }
   }
 }
 
@@ -43,6 +54,12 @@
   max-width: 1064px;
   margin-top: 18px;
   margin-inline: auto;
+
+  .article {
+    &__animate {
+      animation: show-animate 3500ms ease-out forwards;
+    }
+  }
 
   p strong {
     font-weight: bold;
@@ -92,5 +109,9 @@
   @include break.breakpoint(desktop){
     width: 60px;
     height: 60px;
+  }
+
+  &__animate {
+    animation: reveal-animate 1000ms ease-out backwards;
   }
 }
