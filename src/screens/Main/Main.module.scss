@@ -35,6 +35,10 @@
   height: 152px;
   width: 100%;
 
+  &__animate {
+    animation: reveal-animate 1000ms ease-out backwards;
+  }
+
   @include break.breakpoint(tablet) {
     display: flex;
     gap: 1rem;
