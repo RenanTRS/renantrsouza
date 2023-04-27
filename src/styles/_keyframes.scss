@@ -17,3 +17,12 @@
     transform: translateY(1rem);
   }
 }
+
+@keyframes show-animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
