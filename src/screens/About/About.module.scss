@@ -15,7 +15,7 @@
 
   &__scroll {
     &__animate {
-      animation: show-animate 1000ms 2500ms ease-out backwards, ping-animate 1000ms 2000ms ease-in-out alternate infinite;
+      animation: show-animate 1000ms 2500ms ease-out backwards, ping-animate 400ms 2000ms ease-in-out alternate infinite;
     }
   }
 

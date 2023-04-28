@@ -65,7 +65,7 @@
   display: block;
   margin-top: 2rem;
 
-  animation: reveal-scroll 1000ms 3s ease-out backwards, ping-animate 1000ms 2000ms ease-in-out alternate infinite;
+  animation: reveal-scroll 1000ms 3s ease-out backwards, ping-animate 400ms 2000ms ease-in-out alternate infinite;
 
   @include break.landscape(64em){
     display: none;
