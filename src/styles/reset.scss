@@ -34,24 +34,11 @@ body {
 ol, ul {
 	list-style: none;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 
-	scroll-behavior: smooth;
 	&::-webkit-scrollbar {
 		width: 4px;
 	}
@@ -59,7 +46,7 @@ table {
 		background: #9CA3AF;
 		border-radius: 2px;
 	}
-
+	scroll-behavior: smooth !important;
 	scrollbar-width: .25rem;
 	scrollbar-color: #9ca3af transparent;
 }
