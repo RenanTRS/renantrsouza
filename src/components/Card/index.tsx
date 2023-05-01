@@ -4,15 +4,24 @@ import { Heading } from "../Heading";
 import style from "./Card.module.scss";
 import { ArrowRight } from "phosphor-react";
 import { useRouter } from "next/router";
+import { HTMLAttributes } from "react";
 
-interface CardProps {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   id: string;
   icon: string;
   title: string;
   cover: string;
+  className: any;
 }
 
-export function Card({ id, icon, title, cover }: CardProps) {
+export function Card({
+  id,
+  icon,
+  title,
+  cover,
+  className,
+  ...props
+}: CardProps) {
   const { push } = useRouter();
   const handlePush = (id: string) => {
     push(`/project/${id}`);
@@ -20,9 +29,10 @@ export function Card({ id, icon, title, cover }: CardProps) {
 
   return (
     <div
-      className={style.card}
+      className={`${style.card} ${className}`}
       data-testid="card"
       araia-description={`Card do projeto ${title}`}
+      {...props}
     >
       <div className={style.title}>
         <Image src={icon} alt="Logo do projeto" width={24} height={24} />

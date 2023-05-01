@@ -1,13 +1,21 @@
 @use "../../styles/breakpoints" as break;
+@use "../../styles/keyframes";
 @forward "../../styles/util";
+
+@keyframes reveal-scroll {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-
-  @extend .section;
 
   width: 100%;
   min-height: 100vh;
@@ -24,6 +32,10 @@
 
   height: 152px;
   width: 100%;
+
+  &__animate {
+    animation: reveal-animate 1000ms ease-out backwards;
+  }
 
   @include break.breakpoint(tablet) {
     display: flex;
@@ -50,6 +62,8 @@
 .scroll{
   display: block;
   margin-top: 2rem;
+
+  animation: reveal-scroll 1000ms 3s ease-out backwards, ping-animate 400ms 2000ms ease-in-out alternate infinite;
 
   @include break.landscape(64em){
     display: none;

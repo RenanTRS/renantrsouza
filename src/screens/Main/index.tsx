@@ -11,10 +11,10 @@ export function Main() {
         <Hero />
 
         <div className={style.icons}>
-          <Tecnologies />
+          <Tecnologies className={style.icons__animate} />
         </div>
 
-        <span className={style.scroll}>
+        <span className={`${style.scroll} ${style.scroll__animate}`}>
           <ScrollDown />
         </span>
       </div>

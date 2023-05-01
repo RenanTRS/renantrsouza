@@ -1,9 +1,9 @@
 @use "../../styles/variables" as *;
 @use "../../styles/breakpoints" as break;
+@use "../../styles/keyframes";
 @forward "../../styles/util";
 
 .projects {
-  @extend .section;
   position: relative;
 
   height: 100vh;
@@ -18,6 +18,10 @@
 
 .header {
   margin-bottom: 1rem;
+
+  &__animate {
+    animation: reveal-animate 1500ms ease-out forwards
+  }
 }
 
 .wrapper {
@@ -29,6 +33,10 @@
   width: 100%;
 
   padding-bottom: 1rem;
+
+  &__animate {
+    animation: reveal-animate 1200ms ease-out backwards;
+  }
 
   @include break.breakpoint(tablet) {
     gap: .5rem;

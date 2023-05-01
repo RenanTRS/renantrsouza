@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Projects } from "./";
+import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
 
 jest.mock("next/router", () => ({
   useRouter() {
@@ -55,6 +56,7 @@ describe("Projects component", () => {
 
     it("sould be able rendering the text Projetos", () => {
       render(<Projects projects={mockOneProject} />);
+      mockAllIsIntersecting(true);
 
       const titleProjects = screen.getByText("Projetos");
 
@@ -66,6 +68,8 @@ describe("Projects component", () => {
     beforeEach(() => mockMatchMedia(false));
     it("should be able rendering the text Meus Projetos", () => {
       render(<Projects projects={mockOneProject} />);
+      mockAllIsIntersecting(true);
+
       const titleProjects = screen.getByText("Meus Projetos");
       expect(titleProjects).toBeInTheDocument();
     });
@@ -76,6 +80,8 @@ describe("Projects component", () => {
 
     it("should be able rendering the card", () => {
       render(<Projects projects={mockOneProject} />);
+      mockAllIsIntersecting(true);
+
       const cardBlock = screen.getAllByTestId("card");
 
       expect(cardBlock.length).not.toBe(2);
@@ -84,6 +90,8 @@ describe("Projects component", () => {
 
     it("should be able rendering two cards", () => {
       render(<Projects projects={mockTwoProject} />);
+      mockAllIsIntersecting(true);
+
       const cardsBlock = screen.getAllByTestId("card");
 
       expect(cardsBlock.length).toBe(2);
@@ -92,6 +100,7 @@ describe("Projects component", () => {
 
     it("should be able rendering the title card and his icon", () => {
       render(<Projects projects={mockOneProject} />);
+      mockAllIsIntersecting(true);
 
       const titleCard = screen.getByText(mockOneProject[0].name);
       expect(titleCard).toBeInTheDocument();
@@ -102,6 +111,7 @@ describe("Projects component", () => {
 
     it("should be able rendering the cover from project card", () => {
       render(<Projects projects={mockOneProject} />);
+      mockAllIsIntersecting(true);
 
       const coverProject = screen.getByAltText("Capa do projeto");
       expect(coverProject).toBeInTheDocument();
@@ -109,6 +119,7 @@ describe("Projects component", () => {
 
     it("should be able rendering a button from project card", () => {
       render(<Projects projects={mockOneProject} />);
+      mockAllIsIntersecting(true);
 
       const buttonOfCard = screen.getByRole("button", { name: /Acessar/i });
       expect(buttonOfCard).toBeInTheDocument();

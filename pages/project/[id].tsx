@@ -15,6 +15,7 @@ import { Anchor } from "../../src/components/Anchor";
 import { Roboto } from "@next/font/google";
 import { ArrowUUpLeft } from "phosphor-react";
 import Head from "next/head";
+import { useInView } from "react-intersection-observer";
 
 type StaticProps = {
   params: { id: string };
@@ -54,12 +55,27 @@ function project({ project }: ProjectProps) {
     project.tecnologies.includes(index.name)
   );
 
+  const { ref: descriptionRef, inView: isDescriptionInView } = useInView({
+    triggerOnce: true,
+    threshold: 1
+  });
+  const { ref: demoRef, inView: isDemoInView } = useInView({
+    triggerOnce: true,
+    threshold: 1
+  });
+  const { ref: tecnologiesRef, inView: isTecnologiesView } = useInView({
+    triggerOnce: true,
+    threshold: 1
+  });
+
   return (
     <>
       <Head>
         <title>Renan T. R. Souza | {project.name}</title>
       </Head>
-      <div className={`${style.container} ${roboto.className}`}>
+      <div
+        className={`${style.container} ${roboto.className} ${style.container__animate}`}
+      >
         <header className={style.header}>
           <div>
             <Link href={"/#home"}>
@@ -79,7 +95,7 @@ function project({ project }: ProjectProps) {
             style={{
               backgroundImage: `url(${project.hero.url})`
             }}
-            className={style.hero}
+            className={`${style.hero} ${style.hero__animate}`}
           >
             <Heading size="lg" asChild>
               <h2>{project.name}</h2>
@@ -87,43 +103,79 @@ function project({ project }: ProjectProps) {
           </section>
 
           <section className={style.description}>
-            <Heading size="md" asChild>
-              <h2>Descrição:</h2>
+            <Heading
+              size="md"
+              asChild
+              className={`${
+                isDescriptionInView
+                  ? style.description__animate_title
+                  : "before-scroll"
+              }`}
+            >
+              <h2 ref={descriptionRef}>Descrição:</h2>
             </Heading>
 
-            <Text>{project.description}</Text>
+            <Text
+              className={`${
+                isDescriptionInView
+                  ? style.description__animate_text
+                  : "before-scroll"
+              }`}
+            >
+              {project.description}
+            </Text>
           </section>
 
           {project.gif?.url && (
             <section className={style.demo}>
-              <Heading size="md" asChild>
-                <h2>Demo:</h2>
+              <Heading
+                size="md"
+                asChild
+                className={`${
+                  isDemoInView ? style.demo__animate : "before-scroll"
+                }`}
+              >
+                <h2 ref={demoRef}>Demo:</h2>
               </Heading>
 
               <img
                 src={project.gif?.url!}
                 alt="Project demo on web"
-                className={style.gif}
+                className={`${style.gif} ${
+                  isDemoInView ? style.gif__animate : "before-scroll"
+                }`}
               />
             </section>
           )}
 
           <section className={style.tecnologies}>
-            <Heading size="md" asChild>
-              <h2>Tecnologias:</h2>
+            <Heading
+              size="md"
+              asChild
+              className={`${
+                isTecnologiesView ? style.tecnologies__animate : "before-scroll"
+              }`}
+            >
+              <h2 ref={tecnologiesRef}>Tecnologias:</h2>
             </Heading>
 
             <div className={style.img}>
-              {imgs.map((img) => (
-                <Image
-                  src={img.source}
-                  alt={img.alt}
-                  key={img.name}
-                  width={40}
-                  height={40}
-                  title={img.name}
-                />
-              ))}
+              {imgs.map((img, index) => {
+                return (
+                  <Image
+                    src={img.source}
+                    alt={img.alt}
+                    key={img.name}
+                    width={40}
+                    height={40}
+                    title={img.name}
+                    className={`${
+                      isTecnologiesView ? style.img__animate : "before-scroll"
+                    }`}
+                    style={{ animationDelay: `${index * 400}ms` }}
+                  />
+                );
+              })}
             </div>
           </section>
 

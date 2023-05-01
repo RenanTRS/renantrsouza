@@ -1,11 +1,31 @@
 @use "../../src/styles/variables" as *;
 @use "../../src/styles/breakpoints" as break;
+@use "../../src/styles/keyframes";
+
+
+@keyframes tec {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .container {
   background-color: $zinc-900;
   min-height: 100vh;
 
   color: $white;
+
+  &__animate {
+    animation: show-animate 500ms ease-in-out backwards;
+  }
 }
 
 .header {
@@ -95,6 +115,10 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+  &__animate {
+    animation: show-animate 1000ms 500ms ease-out backwards;
+  }
+
   @include break.breakpoint(desktop) {
     height: 70vh;
     background-size: cover;
@@ -113,21 +137,40 @@
 
 .description {
   margin-top: 1.5rem;
+
+  &__animate_title {
+    animation: reveal-animate 1000ms ease-in forwards;
+  }
+
+  &__animate_text {
+    animation: show-animate 1500ms 500ms ease-out backwards;
+  }
 }
 
 .demo {
   margin-top: 1.5rem;
 
+  &__animate {
+    animation: reveal-animate 1000ms ease-in forwards;
+  }
+
   .gif {
     width: 100%;
-    aspect-ratio: 16/9;
     border-radius: .5rem;
     border: 1px solid $zinc-700;
+
+    &__animate {
+      animation: show-animate 1500ms 500ms ease-out backwards;
+    }
   }
 }
 
 .tecnologies {
   margin-top: 1.5rem;
+
+  &__animate {
+    animation: reveal-animate 1000ms ease-in forwards;
+  }
 
   .img {
     display: flex;
@@ -136,6 +179,10 @@
     gap: .5rem;
 
     user-select: none;
+
+    &__animate {
+      animation: tec 1500ms 500ms ease-out backwards;
+    }
 
     @include break.breakpoint(desktop) {
       justify-content: flex-start;

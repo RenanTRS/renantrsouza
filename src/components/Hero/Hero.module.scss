@@ -1,5 +1,47 @@
 @use "../../styles/breakpoints" as break;
 @use "../../styles/variables" as *;
+@use "../../styles/keyframes";
+
+
+@keyframes avatar-motion {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }  
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes avatar-ping {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes name-title {
+  from {
+    opacity: 0;
+    transform: translateX(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes link-motion {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .hero {
   display: flex;
@@ -35,6 +77,16 @@
 
   img {
     border-radius: 50%;
+
+    animation: ping-animate 1500ms 2000ms ease-in-out alternate infinite;
+  }  
+  
+  &__animate {
+    animation: reveal-animate 2000ms ease-out backwards;
+    
+    @include break.breakpoint(desktop){
+      animation: avatar-motion 2000ms ease-out backwards;
+    }
   }
 }
 
@@ -42,6 +94,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__name_animate {
+    animation: reveal-animate 1000ms 400ms ease-out backwards;
+
+    @include break.breakpoint(desktop) {
+      animation: name-title 1000ms 1000ms ease-out backwards;
+    }
+  }
 
   @include break.landscape(48em){
     align-items: start;
@@ -63,5 +123,9 @@
     width: 100%;
 
     margin-top: .25rem;
+
+    &__animate {
+      animation: link-motion 1500ms 1000ms ease-out backwards;
+    }
   }
 }

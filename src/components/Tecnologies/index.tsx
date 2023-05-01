@@ -25,7 +25,7 @@ export function Tecnologies(props: Props) {
 
   return (
     <>
-      {logos.map((logo) => {
+      {logos.map((logo, index) => {
         return (
           <Image
             src={logo.source}
@@ -35,6 +35,7 @@ export function Tecnologies(props: Props) {
             height={40}
             priority
             key={logo.name}
+            style={{ animationDelay: `${index * 200}ms` }}
             data-testid="tecnologies-logo"
           />
         );

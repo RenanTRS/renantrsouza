@@ -2,22 +2,44 @@ import { Heading } from "../../components/Heading";
 import { ScrollDown } from "../../components/ScrollDown";
 import { Tecnologies } from "../../components/Tecnologies";
 import { Text } from "../../components/Text";
+
 import style from "./About.module.scss";
+import { useInView } from "react-intersection-observer";
 
 export function About() {
+  const { ref: aboutRef, inView: isElementInView } = useInView({
+    triggerOnce: true,
+    threshold: 1
+  });
   return (
     <section className={style.about} id="about">
       <div className={style.container}>
-        <Heading size="lg" asChild sub className={style.heading}>
-          <h2>Sobre mim</h2>
+        <Heading
+          size="lg"
+          asChild
+          sub
+          className={`${style.heading} ${
+            isElementInView ? style.heading__animate : "before-scroll"
+          }`}
+        >
+          <h2 ref={aboutRef}>Sobre mim</h2>
         </Heading>
 
         <div className={style.content}>
           <div className={style.icons} aria-hidden>
-            <Tecnologies className={style.icon} />
+            <Tecnologies
+              className={`${style.icon} ${
+                isElementInView ? style.icon__animate : "before-scroll"
+              }`}
+            />
           </div>
 
-          <article>
+          <article
+            ref={aboutRef}
+            className={`${style.article} ${
+              isElementInView ? style.article__animate : "before-scroll"
+            }`}
+          >
             <Text>
               Olá, sou um <strong lang="en-us">Front-end Developer</strong> com
               foco em <strong lang="en-US">React Js</strong> e{" "}
@@ -40,7 +62,11 @@ export function About() {
         </div>
       </div>
 
-      <span className={style.about__scroll}>
+      <span
+        className={`${style.about__scroll} ${
+          isElementInView ? style.about__scroll__animate : "before-scroll"
+        }`}
+      >
         <ScrollDown />
       </span>
     </section>

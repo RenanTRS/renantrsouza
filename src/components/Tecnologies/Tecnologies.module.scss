@@ -1,4 +1,5 @@
 @use "../../styles/breakpoints" as break;
+@use "../../styles/keyframes";
 
 .image {
   display: grid;
@@ -20,4 +21,8 @@
   @include break.landscape(63.9375em){
     display: none;
   }
+}
+
+.animate {
+  animation: reveal-animate 1000ms ease-out backwards;
 }
