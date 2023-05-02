@@ -120,7 +120,7 @@ function project({ project }: ProjectProps) {
                 isDescriptionInView
                   ? style.description__animate_text
                   : "before-scroll"
-              }`}
+              } ${style.description__text}`}
             >
               {project.description}
             </Text>

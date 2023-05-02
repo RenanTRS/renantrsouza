@@ -138,6 +138,10 @@
 .description {
   margin-top: 1.5rem;
 
+  &__text {
+    letter-spacing: -0.75px;
+  }
+
   &__animate_title {
     animation: reveal-animate 1000ms ease-in forwards;
   }
