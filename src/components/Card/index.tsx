@@ -12,6 +12,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   cover: string;
   className: any;
+  blur: string;
 }
 
 export function Card({
@@ -20,6 +21,7 @@ export function Card({
   title,
   cover,
   className,
+  blur,
   ...props
 }: CardProps) {
   const { push } = useRouter();
@@ -49,6 +51,8 @@ export function Card({
           fill
           sizes="13.375rem"
           style={{ objectFit: "contain" }}
+          placeholder="blur"
+          blurDataURL={blur}
           priority
         />
       </div>

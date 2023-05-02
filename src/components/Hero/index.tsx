@@ -27,6 +27,8 @@ export function Hero() {
           style={{ objectFit: "contain" }}
           priority
           sizes="8.5rem, (min-width: 40em) {max-width: 18.5rem}"
+          placeholder="blur"
+          blurDataURL="LFA+s.t70KIVImWUt7of0~WC}tt6"
         />
       </div>
 

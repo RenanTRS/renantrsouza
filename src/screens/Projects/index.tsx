@@ -44,6 +44,7 @@ export function Projects(props: HomeProps) {
               cover={project.cover.url}
               title={project.name}
               key={project.id}
+              blur={project.coverblur}
               style={{ animationDelay: `${index * 400}ms` }}
               className={`${
                 isElementInView ? style.wrapper__animate : "before-scroll"
