@@ -26,6 +26,7 @@ const GET_PROJECTS_QUERY = gql`
       cover {
         url
       }
+      coverblur
     }
   }
 `;
@@ -35,6 +36,7 @@ interface Project {
   icon: { url: string };
   name: string;
   cover: { url: string };
+  coverblur: string;
 }
 
 export interface HomeProps {

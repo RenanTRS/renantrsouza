@@ -17,7 +17,8 @@ const mockOneProject = [
     id: "1",
     icon: { url: "https://media.graphassets.com/bCr89R2ROmeKbIwACrBQ" },
     name: "gitapp",
-    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" }
+    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" },
+    coverblur: "LKQ0aS%L_2Io?aR%M{j]~qxuWVj]"
   }
 ];
 
@@ -26,13 +27,15 @@ const mockTwoProject = [
     id: "1",
     icon: { url: "https://media.graphassets.com/bCr89R2ROmeKbIwACrBQ" },
     name: "gitapp",
-    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" }
+    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" },
+    coverblur: "LKQ0aS%L_2Io?aR%M{j]~qxuWVj]"
   },
   {
     id: "2",
     icon: { url: "https://media.graphassets.com/bCr89R2ROmeKbIwACrBQ" },
     name: "someone",
-    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" }
+    cover: { url: "https://media.graphassets.com/VTKoQElKQiG1IkGv0U7U" },
+    coverblur: "LKQ0aS%L_2Io?aR%M{j]~qxuWVj]"
   }
 ];
 
