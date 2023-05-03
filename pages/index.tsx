@@ -48,6 +48,26 @@ export default function Home(props: HomeProps) {
     <>
       <Head>
         <title>Renan T. R. Souza</title>
+        <meta name="title" content="Renan T. R. Souza" />
+        <meta name="description" content="Portfólio de Renan Souza" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://renantrsouza.vercel.app`} />
+        <meta property="og:title" content="Renan T. R. Souza" />
+        <meta property="og:description" content="Portfólio de Renan Souza" />
+        <meta property="og:image" content={"/cover_port.png"} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://renantrsouza.vercel.app`}
+        />
+        <meta property="twitter:title" content="Renan T. R. Souza" />
+        <meta
+          property="twitter:description"
+          content="Portfólio de Renan Souza"
+        />
+        <meta property="twitter:image" content={"/cover_port.png"} />
       </Head>
 
       <div className={`${roboto.className} body`}>

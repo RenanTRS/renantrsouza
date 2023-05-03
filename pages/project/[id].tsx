@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Heading } from "../../src/components/Heading";
 import { Logo } from "../../src/components/Logo";
 import { Text } from "../../src/components/Text";
+import { useRouter } from "next/router";
 
 import style from "./Project.module.scss";
 
@@ -28,11 +29,13 @@ interface ProjectProps {
   project: {
     name: string;
     hero: { url: string };
+    cover: { url: string };
     description: string;
     gif?: { url: string };
     tecnologies: Array<string>;
     linkDeploy?: string;
     linkGithub: string;
+    tagDescription: string;
   };
 }
 
@@ -51,6 +54,9 @@ const GET_PROJECTS_QUERY = gql`
 `;
 
 function project({ project }: ProjectProps) {
+  const router = useRouter();
+  const { id } = router.query;
+
   const imgs = tecnologies.filter((index) =>
     project.tecnologies.includes(index.name)
   );
@@ -72,6 +78,27 @@ function project({ project }: ProjectProps) {
     <>
       <Head>
         <title>Renan T. R. Souza | {project.name}</title>
+
+        <meta name="title" content={project.name} />
+        <meta name="description" content={project.tagDescription} />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://renantrsouza.vercel.app/project/${id}`}
+        />
+        <meta property="og:title" content={project.name} />
+        <meta property="og:description" content={project.tagDescription} />
+        <meta property="og:image" content={project.cover.url} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://renantrsouza.vercel.app/project/${id}`}
+        />
+        <meta property="twitter:title" content={project.name} />
+        <meta property="twitter:description" content={project.tagDescription} />
+        <meta property="twitter:image" content={project.cover.url} />
       </Head>
       <div
         className={`${style.container} ${roboto.className} ${style.container__animate}`}
@@ -230,6 +257,9 @@ export const getStaticProps = async ({ params }: StaticProps) => {
           hero {
             url
           }
+          cover {
+            url
+          }
           description
           gif {
             url
@@ -237,6 +267,7 @@ export const getStaticProps = async ({ params }: StaticProps) => {
           tecnologies
           linkDeploy
           linkGithub
+          tagdescription
         }
       }
     `
