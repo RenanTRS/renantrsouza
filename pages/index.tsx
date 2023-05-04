@@ -63,8 +63,10 @@ export default function Home(props: HomeProps) {
           content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
         />
         <meta property="og:image" content={"/cover_port.png"} />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Banner" />
         <meta property="og:locale" content="pt_BR" />
 
         <meta property="twitter:card" content="summary_large_image" />
