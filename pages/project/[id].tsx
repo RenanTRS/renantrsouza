@@ -78,8 +78,7 @@ function project({ project }: ProjectProps) {
     <>
       <Head>
         <title>Renan Souza | {project.name}</title>
-
-        <meta name="title" content={`Renan Souza |${project.name}`} />
+        <meta name="title" content={`Renan Souza | ${project.name}`} />
         <meta name="description" content={project.tagDescription} />
 
         <meta property="og:type" content="website" />
@@ -87,8 +86,12 @@ function project({ project }: ProjectProps) {
           property="og:url"
           content={`https://renantrsouza.vercel.app/project/${id}`}
         />
-        <meta property="og:title" content={`Renan Souza |${project.name}`} />
+        <meta property="og:title" content={`Renan Souza | ${project.name}`} />
         <meta property="og:description" content={project.tagDescription} />
+        <meta
+          property="og:site_name"
+          content={`Renan Souza | ${project.name}`}
+        />
         <meta property="og:image" content={project.cover.url} />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -98,7 +101,7 @@ function project({ project }: ProjectProps) {
         />
         <meta
           property="twitter:title"
-          content={`Renan Souza |${project.name}`}
+          content={`Renan Souza | ${project.name}`}
         />
         <meta property="twitter:description" content={project.tagDescription} />
         <meta property="twitter:image" content={project.cover.url} />
