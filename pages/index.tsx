@@ -47,14 +47,21 @@ export default function Home(props: HomeProps) {
   return (
     <>
       <Head>
-        <title>Renan T. R. Souza</title>
-        <meta name="title" content="Renan T. R. Souza" />
-        <meta name="description" content="Portfólio de Renan Souza" />
+        <title>Renan Souza</title>
+        <meta name="title" content="Renan Souza" />
+        <meta
+          name="description"
+          content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
+        />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://renantrsouza.vercel.app`} />
-        <meta property="og:title" content="Renan T. R. Souza" />
-        <meta property="og:description" content="Portfólio de Renan Souza" />
+        <meta property="og:title" content="Renan Souza" />
+        <meta property="og:site_name" content="Renan Souza" />
+        <meta
+          property="og:description"
+          content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
+        />
         <meta property="og:image" content={"/cover_port.png"} />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -62,10 +69,10 @@ export default function Home(props: HomeProps) {
           property="twitter:url"
           content={`https://renantrsouza.vercel.app`}
         />
-        <meta property="twitter:title" content="Renan T. R. Souza" />
+        <meta property="twitter:title" content="Renan Souza" />
         <meta
           property="twitter:description"
-          content="Portfólio de Renan Souza"
+          content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
         />
         <meta property="twitter:image" content={"/cover_port.png"} />
       </Head>
