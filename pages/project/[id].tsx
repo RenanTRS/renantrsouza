@@ -93,6 +93,9 @@ function project({ project }: ProjectProps) {
           content={`Renan Souza | ${project.name}`}
         />
         <meta property="og:image" content={project.cover.url} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta
