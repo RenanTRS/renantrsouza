@@ -47,20 +47,20 @@ export default function Home(props: HomeProps) {
   return (
     <>
       <Head>
-        <title>Renan Souza</title>
-        <meta name="title" content="Renan Souza" />
+        <title>RenanTRSouza</title>
+        <meta name="title" content="RenanTRSouza" />
         <meta
           name="description"
-          content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
+          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan Souza."
         />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://renantrsouza.vercel.app`} />
-        <meta property="og:title" content="Renan Souza" />
-        <meta property="og:site_name" content="Renan Souza" />
+        <meta property="og:title" content="RenanTRSouza" />
+        <meta property="og:site_name" content="RenanTRSouza" />
         <meta
           property="og:description"
-          content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
+          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan Souza."
         />
         <meta property="og:image" content={"/cover_port.png"} />
         <meta property="og:image:type" content="image/png" />
@@ -71,15 +71,16 @@ export default function Home(props: HomeProps) {
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={`https://renantrsouza.vercel.app`} />
-        <meta property="twitter:title" content="Renan Souza" />
+        <meta property="twitter:title" content="RenanTRSouza" />
         <meta
           name="twitter:description"
-          content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
+          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan Souza."
         />
         <meta
           name="twitter:image"
           content={"https://media.graphassets.com/LpHMDpFPRkmUppw4MPib"}
         />
+        <meta name="robots" content="index, follow" />
       </Head>
 
       <div className={`${roboto.className} body`}>
