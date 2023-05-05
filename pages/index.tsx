@@ -69,18 +69,15 @@ export default function Home(props: HomeProps) {
         <meta property="og:image:alt" content="Banner" />
         <meta property="og:locale" content="pt_BR" />
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content={`https://renantrsouza.vercel.app`}
-        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={`https://renantrsouza.vercel.app`} />
         <meta property="twitter:title" content="Renan Souza" />
         <meta
-          property="twitter:description"
+          name="twitter:description"
           content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
         />
         <meta
-          property="twitter:image"
+          name="twitter:image"
           content={"https://media.graphassets.com/LpHMDpFPRkmUppw4MPib"}
         />
       </Head>
