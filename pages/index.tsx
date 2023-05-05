@@ -79,7 +79,10 @@ export default function Home(props: HomeProps) {
           property="twitter:description"
           content="Coletânea dos principais projetos desenvolvidos pelo Front-end Developer Renan Souza"
         />
-        <meta property="twitter:image" content={"/cover_port.png"} />
+        <meta
+          property="twitter:image"
+          content={"https://media.graphassets.com/LpHMDpFPRkmUppw4MPib"}
+        />
       </Head>
 
       <div className={`${roboto.className} body`}>
