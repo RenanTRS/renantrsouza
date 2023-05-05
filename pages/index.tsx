@@ -51,7 +51,7 @@ export default function Home(props: HomeProps) {
         <meta name="title" content="RenanTRSouza" />
         <meta
           name="description"
-          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan Souza."
+          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan T. R. Souza."
         />
 
         <meta property="og:type" content="website" />
@@ -60,7 +60,7 @@ export default function Home(props: HomeProps) {
         <meta property="og:site_name" content="RenanTRSouza" />
         <meta
           property="og:description"
-          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan Souza."
+          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan T. R. Souza."
         />
         <meta property="og:image" content={"/cover_port.png"} />
         <meta property="og:image:type" content="image/png" />
@@ -74,7 +74,7 @@ export default function Home(props: HomeProps) {
         <meta property="twitter:title" content="RenanTRSouza" />
         <meta
           name="twitter:description"
-          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan Souza."
+          content="Encontre aqui os principais projetos pessoais desenvolvidos pelo Front-end Developer Renan T. R. Souza."
         />
         <meta
           name="twitter:image"
