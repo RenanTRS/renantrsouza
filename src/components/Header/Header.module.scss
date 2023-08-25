@@ -10,14 +10,18 @@
   height: 3.5rem;
 
   border-bottom: 1px solid $zinc-700;
-  
+
   @extend .background-color;
 
-  @include break.breakpoint(desktop){
+  @include break.breakpoint(desktop) {
     height: 5rem;
     padding: 1.25rem .5rem;
+
+    display: flex;
+    align-items: center;
   }
-  @include break.breakpoint(desktop-lg){
+
+  @include break.breakpoint(desktop-lg) {
     height: 6.25rem;
   }
 }

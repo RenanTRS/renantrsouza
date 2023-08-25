@@ -15,18 +15,15 @@
   &__header {
     width: 8rem; // 128px
 
-    @include break.breakpoint(desktop){
+    @include break.breakpoint(desktop) {
       width: 15rem;
-    }
-    @include break.breakpoint(desktop-lg){
-      width: 21.145rem;
     }
   }
 
   &__footer {
     width: 9.125rem;
 
-    @include break.breakpoint(tablet){
+    @include break.breakpoint(tablet) {
       width: 21.125rem;
     }
   }
@@ -48,28 +45,33 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+
   @include break.breakpoint(mobile) {
     display: block;
   }
-  @include break.raw-breakpoint(26.6875em){//427px
+
+  @include break.raw-breakpoint(26.6875em) {
+    //427px
     background-image: url("/backgrounds/tablet.svg");
   }
-  
+
   @include break.breakpoint(tablet-lg) {
     background-image: url("/backgrounds/desktop.svg");
   }
+
   @include break.breakpoint(desktop) {
     padding: 0 auto;
   }
+
   background-position: center;
-  
+
   width: 100%;
   min-height: 100vh;
-  
+
   overflow-y: scroll;
+
   &::-webkit-scrollbar {
-		display: none;
+    display: none;
   }
 }
 
